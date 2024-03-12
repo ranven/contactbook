@@ -1,0 +1,124 @@
+commit a55e1f7d29a3a6bfdb79088002354eaf6b1058d7
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:34:31 2023 +0200
+
+    poisto ja uudelleennimeys
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 1ae3e7301b94c5dda7bd2dab500e5d82c1fce247
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:30:58 2023 +0200
+
+    lisää tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit bd8e171423e23e612ede2e1b38c4b5b558815210
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:28:25 2023 +0200
+
+    editoi tiedostoja eka ja kolmas
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 6bc7fa3dfdafd880eec9fdaae137a93810394d4c
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:27:10 2023 +0200
+
+    uudelleennimeä tiedosto
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a9d583b2a3dabbe432c42bc9b9b864f49b509cd0
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:26:07 2023 +0200
+
+    poista toinen.txt
+
+ toinen.txt | 2 --
+ 1 file changed, 2 deletions(-)
+
+commit 32392f8d0c2e5c2bc7c4582ed216ac5926544a06
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:24:22 2023 +0200
+
+    muokkaa tekstiä tiedostossa
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 26547d4a1fc56e0a6cc25c221fb1b7e96a8defb0
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:23:38 2023 +0200
+
+    lisää tekstiä oikeaan tiedostoon
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 6a91b36c122a7c46549039f97083bf73c8354569
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:22:21 2023 +0200
+
+    lisää tekstiä tiedostoon
+
+ stuff/tiedosto.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit c5bff0704aa1a552c9df5650a4d001adc4a6fe95
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:19:26 2023 +0200
+
+    uusi hakemisto ja tiedosto
+
+ stuff/tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 09668697e558fb156fa3c3e977821a7388ea4e67
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:18:38 2023 +0200
+
+    muutos kolmas ja toinen-tiedostoihin
+
+ kolmas.txt | 1 +
+ toinen.txt | 2 ++
+ 2 files changed, 3 insertions(+)
+
+commit 95811d6be48d335d15df19b1d7b32ccb32bcfe3c
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:16:47 2023 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 18fc9016bf0bc74a503d128c91b7ee52e157dd39
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:16:05 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 8e9e3db9a61bb6a66e259334547a9321cc07b4c9
+Author: venla <venla.e.rantanen@gmail.com>
+Date:   Mon Mar 20 14:13:36 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+testilisäys konfliktin aikaansaamiseksi
