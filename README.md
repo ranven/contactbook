@@ -13,6 +13,7 @@
 [komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
 
 **Viikko 2**
+
 [unicafe](/laskarit/viikko2/unicafe)
 [maksukortti](/laskarit/viikko2/maksukortti)
 [coverage](/laskarit/viikko2/testikattavuus.png)
