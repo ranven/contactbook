@@ -10,7 +10,7 @@ Sovelluksella on yksi käyttäjärooli (normaali käyttäjä).
 
 ## Perustoiminnallisuudet
 
-Sovelluksen tiedot tallennetaan SQLite-tietokantaan ja 4. Yhteystietojen vienti csv-tiedostona
+Sovelluksen tiedot tallennetaan SQLite-tietokantaan ja
 sen graafinen käyttöliittymä toteutetaan PyQt-kirjaston avulla. Sovelluksen perustoiminnallisuudet jakautuvat autentikaatioon sekä kontaktien hallinnointiin.
 
 #### Autentikaatio
