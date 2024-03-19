@@ -15,29 +15,29 @@ sen graafinen käyttöliittymä toteutetaan PyQt-kirjaston avulla. Sovelluksen p
 
 #### Autentikaatio
 
-[] Käyttäjä voi luoda tunnukset sovellukseen
+- Käyttäjä voi luoda tunnukset sovellukseen
 
-- Käyttäjätunnuksen tulee olla uniikki ja vähintään 4 merkkiä pitkä
+  - Käyttäjätunnuksen tulee olla uniikki ja vähintään 4 merkkiä pitkä
 
-[] Käyttäjä voi kirjautua sovellukseen
+- Käyttäjä voi kirjautua sovellukseen
 
-- Sovellus autentikoi käyttäjän mikäli tämä syöttää olemassaolevan käyttäjätunnuksen ja salasanan, tai ilmoittaa virheestä mikäli näin ei tapahdu
+  - Sovellus autentikoi käyttäjän mikäli tämä syöttää olemassaolevan käyttäjätunnuksen ja salasanan, tai ilmoittaa virheestä mikäli näin ei tapahdu
 
-[] Ollessaan sisäänkirjautunut käyttäjä voi kirjautua ulos järjestelmästä
+- Ollessaan sisäänkirjautunut käyttäjä voi kirjautua ulos järjestelmästä
 
 #### Kontaktit
 
-[] Käyttäjä voi nähdä tallentamansa kontaktit kirjauduttuaan sovellukseen
-[] Käyttäjä voi lisätä uuden kontaktin
-[] Kontaktiin voi tallentaa nimen, sähköpostiosoitteen, puhelinnumeron sekä roolin.
-[] Käyttäjä voi poistaa kontaktin
-[] Käyttäjä voi poistaa kaikki luomansa kontaktit
+- Käyttäjä voi nähdä tallentamansa kontaktit kirjauduttuaan sovellukseen
+- Käyttäjä voi lisätä uuden kontaktin
+  - Kontaktiin voi tallentaa nimen, sähköpostiosoitteen, puhelinnumeron sekä roolin.
+- Käyttäjä voi poistaa kontaktin
+- Käyttäjä voi poistaa kaikki luomansa kontaktit
 
 ## Jatkokehitysideat
 
-[] Yhteystietojen hakutoiminnallisuus
-[] Käyttäjätunnuksen ja sen luomien yhteystietojen poisto
-[] Yhteystietojen tallentaminen erillisiin yhteystietolistoihin sekä listojen hallinnointi
-[] Admin-käyttäjäroolin luonti jonka avulla voi hallinnoida kaikkia sovellukseen luotuja yhteystietoja
-[] Kontaktien editointitoiminnallisuus
-[] Yhteystietojen lisäkentät (esim. tunnisteet tai tägit) joiden avulla filtteröidä kontaktilistaa
+- Yhteystietojen hakutoiminnallisuus
+- Käyttäjätunnuksen ja sen luomien yhteystietojen poisto
+- Yhteystietojen tallentaminen erillisiin yhteystietolistoihin sekä listojen hallinnointi
+- Admin-käyttäjäroolin luonti jonka avulla voi hallinnoida kaikkia sovellukseen luotuja yhteystietoja
+- Kontaktien editointitoiminnallisuus
+- Yhteystietojen lisäkentät (esim. tunnisteet tai tägit) joiden avulla filtteröidä kontaktilistaa
