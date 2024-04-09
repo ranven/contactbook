@@ -1,5 +1,6 @@
-.env
 *.pyc
-data/*
+.pytest_cache
+__pycache__
 .coverage
 htmlcov
+data/*
