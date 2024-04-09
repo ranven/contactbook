@@ -4,16 +4,26 @@
 
 [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 [Työaikakirjanpito](/dokumentaatio/tuntikirjanpito.md)
+[Changelog](/dokumentaatio/changelog.md)
 
-## Tehtävät
+## Sovelluksen asennus ja käyttäminen
 
-**Viikko 1**
+Riippuvuuksien asennus:
 
-[gitlog.txt](/laskarit/viikko1/gitlog.txt)
-[komentorivi.txt](/laskarit/viikko1/komentorivi.txt)
+`poetry install`
 
-**Viikko 2**
+Alusta sovellus:
 
-[unicafe](/laskarit/viikko2/unicafe)
-[maksukortti](/laskarit/viikko2/maksukortti)
-[coverage](/laskarit/viikko2/testikattavuus.png)
+`poetry run invoke build`
+
+Käynnistä sovellus:
+
+`poetry run invoke start`
+
+Testien ajaminen:
+
+`poetry run invoke test`
+
+Testikattavuus:
+
+`poetry run invoke coverage-report`
