@@ -1,6 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-from .config import DATABASE_FILE_PATH
+from config import DATABASE_FILE_PATH
 
 
 def get_db_connection():

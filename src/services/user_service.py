@@ -1,5 +1,5 @@
-from ..repositories.user_repository import user_repository
-from ..entities.user import User
+from repositories.user_repository import user_repository
+from entities.user import User
 
 
 class UserService:
