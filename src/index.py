@@ -1,8 +1,11 @@
 from tkinter import Tk
-from ui.main import UI
+from ui.ui import UI
+from initialize_db import initialize_db
 
 
 def main():
+    initialize_db()
+
     window = Tk()
     window.title("Contact Book")
 
