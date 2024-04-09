@@ -13,6 +13,13 @@ class UserRepository:
 
         return [User(row["username"], row["password"]) for row in rows]
 
+    def find_one(self, username):
+        cursor = self._connection.cursor()
+        cursor.execute("SELECT * FROM users WHERE username = ?", (username, ))
+        row = cursor.fetchone()
+
+        return User(row["username"], row["password"]) if row else None
+
     def create(self, user):
         cursor = self._connection.cursor()
         cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)",

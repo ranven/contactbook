@@ -24,4 +24,13 @@ class UserService:
     def logout(self):
         self._user = None
 
-    # todo: login
+    def login(self, username, password):
+        user = self._user_repository.find_one(username)
+        if not user or user.password != password:
+            print("invalid username or password")
+            # todo: error handling
+        self._user = user
+        return user
+
+
+user_service = UserService()
