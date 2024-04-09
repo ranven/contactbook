@@ -13,6 +13,13 @@ class UserRepository:
 
         return [User(row["username"], row["password"]) for row in rows]
 
+    def create(self, user):
+        cursor = self._connection.cursor()
+        cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)",
+                       (user.username, user.password))
+        self._connection.commit()
+        return user
+
 
 user_repository = UserRepository(get_db_connection())
 users = user_repository.find_all()
