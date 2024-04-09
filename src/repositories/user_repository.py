@@ -20,6 +20,11 @@ class UserRepository:
 
         return User(row["username"], row["password"]) if row else None
 
+    def delete_all(self):
+        cursor = self._connection.cursor()
+        cursor.execute("DELETE FROM users")
+        self._connection.commit()
+
     def create(self, user):
         cursor = self._connection.cursor()
         cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)",

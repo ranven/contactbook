@@ -4,7 +4,7 @@ from initialize_db import initialize_database
 
 
 def main():
-    initialize_database()
+    # initialize_database()
 
     window = Tk()
     window.title("Contact Book")
