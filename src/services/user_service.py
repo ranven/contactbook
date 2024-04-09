@@ -2,6 +2,10 @@ from repositories.user_repository import user_repository
 from entities.user import User
 
 
+class InvalidCredentialsError(Exception):
+    pass
+
+
 class UserService:
     def __init__(
             self,
@@ -27,8 +31,7 @@ class UserService:
     def login(self, username, password):
         user = self._user_repository.find_one(username)
         if not user or user.password != password:
-            print("invalid username or password")
-            # todo: error handling
+            raise InvalidCredentialsError("Invalid username or password")
         self._user = user
         return user
 

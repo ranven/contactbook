@@ -46,5 +46,5 @@ class UI:
 
     def _show_contacts_view(self):
         self._hide_current_view()
-        self._current_view = ContactsView(self._root)
+        self._current_view = ContactsView(self._root, self._show_login_view)
         self._current_view.pack()
