@@ -5,3 +5,6 @@
 | 19.3. | 1        | Sovelluksen ideointi ja vaatimusmäärittely                                             |
 | 8.4.  | 1        | Sovelluksen ja tietokannan alustus                                                     |
 | 9.4.  | 4        | Autentikaation ja käyttöliittymän toteutus, testien alustus ja invoke-tehtävien luonti |
+| 15.4. | 1        | Pylintin lisäys ja virheiden korjaus, autentikaation virheilmoitusten toteutus         |
+| ----- | -------- | -------------------------------------------------------------------------------------- |
+| yht   | 6        |                                                                                        |
