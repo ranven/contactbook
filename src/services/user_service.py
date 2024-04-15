@@ -6,12 +6,16 @@ class InvalidCredentialsError(Exception):
     pass
 
 
+class UsernameTakenError(Exception):
+    pass
+
+
 class UserService:
     def __init__(
             self,
-            user_repository=user_repository):
+            user_repo=user_repository):
         self._user = None
-        self._user_repository = user_repository
+        self._user_repository = user_repo
 
     def get_users(self):
         return self._user_repository.find_all()
@@ -20,7 +24,10 @@ class UserService:
         return self._user
 
     def create(self, username, password):
-        # todo: check for existing user
+        existing_user = self._user_repository.find_one(username)
+        if existing_user:
+            raise UsernameTakenError((f"Username {username} already exists"))
+
         user = self._user_repository.create(User(username, password))
         self._user = user
         return user
