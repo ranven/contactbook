@@ -6,5 +6,4 @@
 | 8.4.  | 1        | Sovelluksen ja tietokannan alustus                                                     |
 | 9.4.  | 4        | Autentikaation ja käyttöliittymän toteutus, testien alustus ja invoke-tehtävien luonti |
 | 15.4. | 1        | Pylintin lisäys ja virheiden korjaus, autentikaation virheilmoitusten toteutus         |
-| ----- | -------- | -------------------------------------------------------------------------------------- |
-| yht   | 6        |                                                                                        |
+| Yht   | 6        |                                                                                        |
