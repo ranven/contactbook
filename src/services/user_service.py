@@ -28,6 +28,13 @@ class UserService:
         if existing_user:
             raise UsernameTakenError((f"Username {username} already exists"))
 
+        if len(username) < 5:
+            raise InvalidCredentialsError(
+                "Username should be at least 4 characters long")
+        if len(password) < 5:
+            raise InvalidCredentialsError(
+                "Password should be at least 4 characters long")
+
         user = self._user_repository.create(User(username, password))
         self._user = user
         return user

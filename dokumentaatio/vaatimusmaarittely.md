@@ -18,6 +18,7 @@ sen graafinen käyttöliittymä toteutetaan PyQt-kirjaston avulla. Sovelluksen p
 - Käyttäjä voi luoda tunnukset sovellukseen
 
   - Käyttäjätunnuksen tulee olla uniikki ja vähintään 4 merkkiä pitkä
+  - Salasanan tulee olla vähintään 4 merkkiä pitkä
 
 - Käyttäjä voi kirjautua sovellukseen
 
