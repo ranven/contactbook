@@ -16,3 +16,4 @@
 - Luotu ContactRepository-luokka, joka vastaa kontaktien hallinnasta tietokannassa
 - Käyttäjä voi kirjautuneena ollessaan luoda uusia kontakteja graafisen käyttöliittymän kautta
 - Toteutettu alustava käyttöliittymä kontaktien listaamiseksi kirjautuneelle käyttäjälle (listaus ei kuitenkaan vielä toimi)
+- ContactRepository-luokan testit aloitettu
