@@ -11,14 +11,14 @@ class UserRepository:
         cursor.execute("SELECT * FROM users")
         rows = cursor.fetchall()
 
-        return [User(row["username"], row["password"]) for row in rows]
+        return [User(row["username"], row["password"], row["id"]) for row in rows]
 
     def find_one(self, username):
         cursor = self._connection.cursor()
         cursor.execute("SELECT * FROM users WHERE username = ?", (username, ))
         row = cursor.fetchone()
 
-        return User(row["username"], row["password"]) if row else None
+        return User(row["username"], row["password"], row["id"]) if row else None
 
     def delete_all(self):
         cursor = self._connection.cursor()

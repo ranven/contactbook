@@ -19,13 +19,14 @@ def create_tables(connection):
         """)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS contacts(
-            if SERIAL PRIMARY KEY,
+            id SERIAL PRIMARY KEY,
             first_name TEXT NOT NULL,
             last_name TEXT NOT NULL,
             email TEXT NOT NULL,
             phone TEXT NOT NULL,
             role TEXT NOT NULL,
-            created_at TIMESTAMP DEFAULT (DATETIME('now', 'localtime'))
+            created_at TIMESTAMP DEFAULT (DATETIME('now', 'localtime')),
+            user SERIAL REFERENCES users(id) ON DELETE SET NULL
             );
         """)
     connection.commit()

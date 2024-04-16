@@ -35,7 +35,7 @@ class UserService:
             raise InvalidCredentialsError(
                 "Password should be at least 4 characters long")
 
-        user = self._user_repository.create(User(username, password))
+        user = self._user_repository.create(User(username, password, None))
         self._user = user
         return user
 
