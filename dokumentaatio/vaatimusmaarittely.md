@@ -11,26 +11,26 @@ Sovelluksella on yksi käyttäjärooli (normaali käyttäjä).
 ## Perustoiminnallisuudet
 
 Sovelluksen tiedot tallennetaan SQLite-tietokantaan ja
-sen graafinen käyttöliittymä toteutetaan PyQt-kirjaston avulla. Sovelluksen perustoiminnallisuudet jakautuvat autentikaatioon sekä kontaktien hallinnointiin.
+sen graafinen käyttöliittymä toteutetaan Tkinter-kirjaston avulla. Sovelluksen perustoiminnallisuudet jakautuvat autentikaatioon sekä kontaktien hallinnointiin.
 
 #### Autentikaatio
 
-- Käyttäjä voi luoda tunnukset sovellukseen
+- Käyttäjä voi luoda tunnukset sovellukseen TEHTY
 
-  - Käyttäjätunnuksen tulee olla uniikki ja vähintään 4 merkkiä pitkä
-  - Salasanan tulee olla vähintään 4 merkkiä pitkä
+  - Käyttäjätunnuksen tulee olla uniikki ja vähintään 4 merkkiä pitkä **TEHTY**
+  - Salasanan tulee olla vähintään 4 merkkiä pitkä **TEHTY**
 
-- Käyttäjä voi kirjautua sovellukseen
+- Käyttäjä voi kirjautua sovellukseen **TEHTY**
 
-  - Sovellus autentikoi käyttäjän mikäli tämä syöttää olemassaolevan käyttäjätunnuksen ja salasanan, tai ilmoittaa virheestä mikäli näin ei tapahdu
+  - Sovellus autentikoi käyttäjän mikäli tämä syöttää olemassaolevan käyttäjätunnuksen ja salasanan, tai ilmoittaa virheestä mikäli näin ei tapahdu **OSITTAIN TEHTY (virheilmoituksien kattavassa näyttämisessä on vielä parantamista)**
 
-- Ollessaan sisäänkirjautunut käyttäjä voi kirjautua ulos järjestelmästä
+- Ollessaan sisäänkirjautunut käyttäjä voi kirjautua ulos järjestelmästä **TEHTY**
 
 #### Kontaktit
 
-- Käyttäjä voi nähdä tallentamansa kontaktit kirjauduttuaan sovellukseen
-- Käyttäjä voi lisätä uuden kontaktin
-  - Kontaktiin voi tallentaa nimen, sähköpostiosoitteen, puhelinnumeron sekä roolin.
+- Käyttäjä voi nähdä tallentamansa kontaktit kirjauduttuaan sovellukseen **OSITTAIN TEHTY (lista ei näy, mutta sille on implementoitu näkymä)**
+- Käyttäjä voi lisätä uuden kontaktin **TEHTY**
+  - Kontaktiin voi tallentaa nimen, sähköpostiosoitteen, puhelinnumeron sekä roolin. **OSITTAIN TEHTY (rooli ja sähköposti puuttuvat)**
 - Käyttäjä voi poistaa kontaktin
 - Käyttäjä voi poistaa kaikki luomansa kontaktit
 
