@@ -1,5 +1,6 @@
 from repositories.user_repository import user_repository
 from entities.user import User
+import uuid
 
 
 class InvalidCredentialsError(Exception):
@@ -26,16 +27,19 @@ class UserService:
     def create(self, username, password):
         existing_user = self._user_repository.find_one(username)
         if existing_user:
-            raise UsernameTakenError((f"Username {username} already exists"))
+            return UsernameTakenError((f"Username {username} already exists"))
 
         if len(username) < 5:
-            raise InvalidCredentialsError(
+            return InvalidCredentialsError(
                 "Username should be at least 4 characters long")
         if len(password) < 5:
-            raise InvalidCredentialsError(
+            return InvalidCredentialsError(
                 "Password should be at least 4 characters long")
 
-        user = self._user_repository.create(User(username, password, None))
+        # todo: bring error messages to UI
+
+        user = self._user_repository.create(
+            User(username, password, uuid.uuid4().hex))
         self._user = user
         return user
 

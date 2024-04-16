@@ -2,6 +2,7 @@
 from ui.login_view import LoginView
 from ui.register_view import RegisterView
 from ui.contacts_view import ContactsView
+from ui.contact_form_view import ContactsForm
 
 
 class UI:
@@ -46,5 +47,12 @@ class UI:
 
     def _show_contacts_view(self):
         self._hide_current_view()
-        self._current_view = ContactsView(self._root, self._show_login_view)
+        self._current_view = ContactsView(
+            self._root, self._show_login_view, self._show_contact_form_view)
+        self._current_view.pack()
+
+    def _show_contact_form_view(self):
+        self._hide_current_view()
+        self._current_view = ContactsForm(
+            self._root, self._show_contacts_view)
         self._current_view.pack()
