@@ -21,6 +21,25 @@ class ContactRepository:
                         row["created_at"],
                         row["user"]) for row in rows]
 
+    def find_one(self, contact_id):
+        cursor = self._connection.cursor()
+        cursor.execute("SELECT * FROM contacts WHERE id = ?", (contact_id, ))
+        row = cursor.fetchone()
+
+        return Contact(row["id"],
+                       row["first_name"],
+                       row["last_name"],
+                       row["email"],
+                       row["phone"],
+                       row["role"],
+                       row["created_at"],
+                       row["user"]) if row else None
+
+    def delete_all(self):
+        cursor = self._connection.cursor()
+        cursor.execute("DELETE FROM contacts")
+        self._connection.commit()
+
     def create(self, contact):
         cursor = self._connection.cursor()
         cursor.execute(
