@@ -1,3 +1,3 @@
 # Arkkitehtuurikuvaus
 
-[Arkkitehtuuri](arkkitehtuuri.png)
+![Arkkitehtuuri](arkkitehtuuri.png)
