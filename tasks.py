@@ -18,7 +18,7 @@ def test(ctx):
 
 @task
 def lint(ctx):
-    ctx.run("pylint", pty=True)
+    ctx.run("pylint src", pty=True)
 
 
 @task
