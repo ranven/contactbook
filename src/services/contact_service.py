@@ -1,7 +1,7 @@
+import uuid
 from repositories.contact_repository import contact_repository
 from entities.contact import Contact
 from services.user_service import user_service
-import uuid
 
 
 class ContactService:

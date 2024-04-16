@@ -1,6 +1,6 @@
+import uuid
 from repositories.user_repository import user_repository
 from entities.user import User
-import uuid
 
 
 class InvalidCredentialsError(Exception):
