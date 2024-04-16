@@ -1,5 +1,5 @@
 from tkinter import ttk, StringVar, constants
-from services.user_service import user_service
+from services.user_service import user_service, InvalidCredentialsError
 
 
 class RegisterView:
@@ -10,6 +10,8 @@ class RegisterView:
         self._frame = None
         self._username_entry = None
         self._password_entry = None
+        self._error_variable = None
+        self._error_label = None
 
         self._initialize()
 
@@ -18,6 +20,13 @@ class RegisterView:
 
     def destroy(self):
         self._frame.destroy()
+
+    def _show_error(self, message):
+        self._error_variable.set(message)
+        self._error_label.grid()
+
+    def _hide_error(self):
+        self._error_label.grid_remove()
 
     def _register_handler(self):
         username = self._username_entry.get()
@@ -31,27 +40,43 @@ class RegisterView:
         try:
             user_service.create(username, password)
             self._handle_register()
-        except:
-            print(f"Username {username} already exists")
-            # todo: error handling
+        except InvalidCredentialsError:
+            self._show_error("Invalid username or password.")
 
     def _initialize_username_field(self):
         username_label = ttk.Label(master=self._frame, text="Username")
         self._username_entry = ttk.Entry(master=self._frame)
 
+        username_requirements = ttk.Label(
+            master=self._frame, font=("Arial", 10), foreground="#5A5A5A", text="Username needs to be unique and at least 4 characters long")
+
         username_label.grid(padx=5, pady=5, sticky=constants.W)
         self._username_entry.grid(padx=5, pady=5, sticky=constants.EW)
+        username_requirements.grid(padx=5, pady=5, sticky=constants.W)
 
     def _initialize_password_field(self):
         password_label = ttk.Label(master=self._frame, text="Password")
 
         self._password_entry = ttk.Entry(master=self._frame)
+        self._password_entry.config(show="*")
+
+        password_requirements = ttk.Label(
+            master=self._frame, font=("Arial", 10), foreground="#5A5A5A", text="Password needs to be at least 4 characters long")
 
         password_label.grid(padx=5, pady=5, sticky=constants.W)
         self._password_entry.grid(padx=5, pady=5, sticky=constants.EW)
+        password_requirements.grid(padx=5, pady=5, sticky=constants.W)
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
+
+        self._error_variable = StringVar(self._frame)
+
+        self._error_label = ttk.Label(
+            master=self._frame,
+            textvariable=self._error_variable,
+            foreground="red"
+        )
 
         self._initialize_username_field()
         self._initialize_password_field()
