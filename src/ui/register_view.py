@@ -33,9 +33,8 @@ class RegisterView:
         password = self._password_entry.get()
 
         if len(username) == 0 or len(password) == 0:
-            print("Username and password are required")
-            # todo: error handling
-            return
+            raise InvalidCredentialsError(
+                "Username and password are required.")
 
         try:
             user_service.create(username, password)

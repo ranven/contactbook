@@ -17,6 +17,8 @@ class ContactsForm:
         self._email_entry = None
         self._phone_entry = None
         self._role_entry = None
+        self._error_variable = None
+        self._error_label = None
 
         self._initialize()
 
@@ -25,6 +27,13 @@ class ContactsForm:
 
     def destroy(self):
         self._frame.destroy()
+
+    def _show_error(self, message):
+        self._error_variable.set(message)
+        self._error_label.grid()
+
+    def _hide_error(self):
+        self._error_label.grid_remove()
 
     def _create_handler(self):
         first_name = self._firstname_entry.get()
@@ -36,8 +45,7 @@ class ContactsForm:
                 first_name, last_name, phone, "", "")
             self._handle_create()
         except ContactCreationError:
-            # todo: error handling
-            print("Error")
+            self._show_error("Error creating contact")
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
