@@ -17,3 +17,8 @@
 - Käyttäjä voi kirjautuneena ollessaan luoda uusia kontakteja graafisen käyttöliittymän kautta
 - Toteutettu alustava käyttöliittymä kontaktien listaamiseksi kirjautuneelle käyttäjälle (listaus ei kuitenkaan vielä toimi)
 - ContactRepository-luokan testit aloitettu
+
+## Viikko 5
+
+- Luotu käyttöliittymä kontaktien listaamiseksi
+- Parannuksia virheiden käsittelyyn ja virheilmoituksiin

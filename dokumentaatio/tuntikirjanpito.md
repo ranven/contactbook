@@ -9,4 +9,5 @@
 | 16.4. | 6        | Kontaktien alustus ja toteutus, kontaktien lisäyksen toteutus, alustavan kontaktien listauksen toteutus |
 |       |          | sekä käyttöliittymän parantelu                                                                          |
 | 16.4. | 1        | Kontaktirepositorion testien aloitus, arkkitehtuurikuvauksen luonti                                     |
-| Yht   | 14       |                                                                                                         |
+| 22.4. | 3        | Kontaktilistan ja luontilomakkeen käyttöliittymä, virheiden käsittely autentikaatiossa                  |
+| Yht   | 17       |                                                                                                         |
