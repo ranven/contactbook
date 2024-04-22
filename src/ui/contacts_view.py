@@ -95,10 +95,18 @@ class ContactsView:
 
         phone_label = ttk.Label(
             master=contact_frame, text="Phone:", style="ContactLabel.TLabel")
-        phone_label.grid(row=3, column=0, sticky="w")
+        phone_label.grid(row=0, column=2, sticky="w", padx=25)
 
         phone_value = ttk.Label(
             master=contact_frame, text=contact.phone, style="ContactLabel.TLabel")
-        phone_value.grid(row=3, column=1, sticky="w")
+        phone_value.grid(row=0, column=3, sticky="w")
+
+        role_label = ttk.Label(
+            master=contact_frame, text="Role:", style="ContactLabel.TLabel")
+        role_label.grid(row=1, column=2, sticky="w", padx=25)
+
+        role_value = ttk.Label(
+            master=contact_frame, text=contact.role, style="ContactLabel.TLabel")
+        role_value.grid(row=1, column=3, sticky="w")
 
         contact_frame.pack(fill=constants.X, padx=10, pady=(5, 0))

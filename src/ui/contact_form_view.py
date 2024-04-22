@@ -39,10 +39,12 @@ class ContactsForm:
         first_name = self._firstname_entry.get()
         last_name = self._lastname_entry.get()
         phone = self._phone_entry.get()
+        email = self._email_entry.get()
+        role = self._role_entry.get()
 
         try:
             contact_service.create_contact(
-                first_name, last_name, phone, "", "")
+                first_name, last_name, phone, email, role)
             self._handle_create()
         except ContactCreationError:
             self._show_error("Error creating contact")
@@ -53,7 +55,9 @@ class ContactsForm:
 
         self._initialize_firstname_field()
         self._initialize_lastname_field()
+        self._initialize_email_field()
         self._initialize_phone_field()
+        self._initialize_role_field()
 
         create_button = ttk.Button(
             master=self._frame,
@@ -92,3 +96,17 @@ class ContactsForm:
 
         phone_label.grid(padx=5, pady=5, sticky=constants.W)
         self._phone_entry.grid(padx=5, pady=5, sticky=constants.EW)
+
+    def _initialize_email_field(self):
+        email_label = ttk.Label(master=self._frame, text="Email")
+        self._email_entry = ttk.Entry(master=self._frame)
+
+        email_label.grid(padx=5, pady=5, sticky=constants.W)
+        self._email_entry.grid(padx=5, pady=5, sticky=constants.EW)
+
+    def _initialize_role_field(self):
+        role_label = ttk.Label(master=self._frame, text="Role")
+        self._role_entry = ttk.Entry(master=self._frame)
+
+        role_label.grid(padx=5, pady=5, sticky=constants.W)
+        self._role_entry.grid(padx=5, pady=5, sticky=constants.EW)

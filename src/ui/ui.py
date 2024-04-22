@@ -13,6 +13,7 @@ class UI:
     def start(self):
         self._root.configure(background="grey")
         self._root.minsize(500, 500)
+        self._root.maxsize(1000, 1000)
         self._show_login_view()
 
     def _destroy_view(self):
