@@ -20,5 +20,9 @@
 
 ## Viikko 5
 
-- Luotu käyttöliittymä kontaktien listaamiseksi
+- Luotu toiminnallisuudet kontaktien listaamiseksi ja poistamiseksi
 - Parannuksia virheiden käsittelyyn ja virheilmoituksiin
+- Lisätty puuttuvat kentät (role, email) kontaktien luomiseen ja listaamiseen
+- Käyttäjä voi kirjautuneena ollessaan tarkastella tallentamiansa kontakteja graafisen käyttöliittymän kautta
+- Käyttäjä voi kirjautuneena ollessaan poistaa kaikki luomansa kontaktit graafisen käyttöliittymän kautta
+- Testattu että ContactRepository-luokka palauttaa, luo ja poistaa kontakteja oikein

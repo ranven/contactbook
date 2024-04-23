@@ -24,7 +24,7 @@ class UserService:
     def get_current(self):
         return self._user
 
-    def create(self, username, password):
+    def create_user(self, username, password):
         existing_user = self._user_repository.find_one(username)
         if existing_user:
             raise UsernameTakenError((f"Username {username} already exists"))

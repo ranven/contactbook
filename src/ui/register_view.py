@@ -37,7 +37,7 @@ class RegisterView:
                 "Username and password are required.")
 
         try:
-            user_service.create(username, password)
+            user_service.create_user(username, password)
             self._handle_register()
         except InvalidCredentialsError:
             self._show_error("Invalid username or password.")

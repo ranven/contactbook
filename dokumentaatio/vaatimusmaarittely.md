@@ -15,24 +15,24 @@ sen graafinen käyttöliittymä toteutetaan Tkinter-kirjaston avulla. Sovellukse
 
 #### Autentikaatio
 
-- Käyttäjä voi luoda tunnukset sovellukseen TEHTY
+- Käyttäjä voi luoda tunnukset sovellukseen **TEHTY**
 
   - Käyttäjätunnuksen tulee olla uniikki ja vähintään 4 merkkiä pitkä **TEHTY**
   - Salasanan tulee olla vähintään 4 merkkiä pitkä **TEHTY**
 
 - Käyttäjä voi kirjautua sovellukseen **TEHTY**
 
-  - Sovellus autentikoi käyttäjän mikäli tämä syöttää olemassaolevan käyttäjätunnuksen ja salasanan, tai ilmoittaa virheestä mikäli näin ei tapahdu **OSITTAIN TEHTY (virheilmoituksien kattavassa näyttämisessä on vielä parantamista)**
+  - Sovellus autentikoi käyttäjän mikäli tämä syöttää olemassaolevan käyttäjätunnuksen ja salasanan, tai ilmoittaa virheestä mikäli näin ei tapahdu **TEHTY**
 
 - Ollessaan sisäänkirjautunut käyttäjä voi kirjautua ulos järjestelmästä **TEHTY**
 
 #### Kontaktit
 
-- Käyttäjä voi nähdä tallentamansa kontaktit kirjauduttuaan sovellukseen **OSITTAIN TEHTY (lista ei näy, mutta sille on implementoitu näkymä)**
+- Käyttäjä voi nähdä tallentamansa kontaktit kirjauduttuaan sovellukseen **TEHTY**
 - Käyttäjä voi lisätä uuden kontaktin **TEHTY**
-  - Kontaktiin voi tallentaa nimen, sähköpostiosoitteen, puhelinnumeron sekä roolin. **OSITTAIN TEHTY (rooli ja sähköposti puuttuvat)**
+  - Kontaktiin voi tallentaa nimen, sähköpostiosoitteen, puhelinnumeron sekä roolin. **TEHTY**
 - Käyttäjä voi poistaa kontaktin
-- Käyttäjä voi poistaa kaikki luomansa kontaktit
+- Käyttäjä voi poistaa kaikki luomansa kontaktit **TEHTY**
 
 ## Jatkokehitysideat
 
