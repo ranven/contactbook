@@ -43,7 +43,7 @@ class ContactRepository:
     def delete_one(self, contact_id):
         cursor = self._connection.cursor()
         cursor.execute(
-            "DELETE FROM contacts WHERE contact_id = ?", (contact_id, ))
+            "DELETE FROM contacts WHERE id = ?", (contact_id, ))
         self._connection.commit()
 
     def create(self, contact):
@@ -51,7 +51,7 @@ class ContactRepository:
         cursor.execute(
             "INSERT INTO contacts (id, first_name, last_name, email, phone, role, user)"
             "VALUES (?, ?, ?, ?, ?, ?, ?)",
-            (contact.id[0], contact.first_name, contact.last_name, contact.email,
+            (contact.id, contact.first_name, contact.last_name, contact.email,
              contact.phone, contact.role, contact.user))
         self._connection.commit()
         return contact
