@@ -1,5 +1,9 @@
 # Contact Book
 
+Sovellus on osoitekirja johon käyttäjä voi tallentaa ja hallinnoida tallettamiaan yhteystietoja. Sovellusta voi käyttää useampi rekisteröitynyt käyttäjä joilla kaikilla on oma yhteystietolistansa.
+
+## Release
+
 [Viikon 5 release](https://github.com/ranven/contactbook/releases/tag/viikko5)
 
 ## Dokumentaatio
