@@ -9,13 +9,14 @@ class ContactCreationError(Exception):
 
 
 class ContactsView:
-    def __init__(self, root, handle_logout, handle_create):
+    def __init__(self, root, handle_logout, handle_create, handle_delete):
         self._root = root
         self._frame = None
         self._canvas = None
         self._scrollbar = None
         self._handle_logout = handle_logout
         self._handle_create = handle_create
+        self._handle_delete = handle_delete
         self._contacts = []
         self._contact_form_frame = None
         self._contact_form_view = None
@@ -31,11 +32,36 @@ class ContactsView:
         user_service.logout()
         self._handle_logout()
 
+    def _delete_all_handler(self):
+        contact_service.delete_all()
+        self._handle_delete()
+
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
 
+        self._initialize_header()
+        self._initialize_scrollbar()
+
+        self._contacts = contact_service.get_contacts()
+        for contact in self._contacts:
+            self._initialize_contact(contact)
+
+    def _initialize_header(self):
         top_frame = ttk.Frame(master=self._frame)
         top_frame.pack(fill=constants.X)
+
+        btn_style = ttk.Style()
+        btn_style.map("Red.TButton", background=[
+                      ('active', 'red'), ('!active', 'lightgrey')])
+
+        delete_all_button = ttk.Button(
+            master=top_frame,
+            text="Delete all",
+            command=self._delete_all_handler,
+            style="Red.TButton"
+        )
+
+        delete_all_button.pack(side=constants.RIGHT, padx=5, pady=5)
 
         logout_button = ttk.Button(
             master=top_frame,
@@ -57,13 +83,6 @@ class ContactsView:
             font=("Helvetica", 16)
         )
         header_label.pack(pady=10)
-
-        self._initialize_scrollbar()
-
-        self._contacts = contact_service.get_contacts()
-
-        for contact in self._contacts:
-            self._initialize_contact(contact)
 
     def _initialize_scrollbar(self):
         self._canvas = Canvas(self._frame)

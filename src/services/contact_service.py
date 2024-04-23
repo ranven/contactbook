@@ -29,5 +29,9 @@ class ContactService:
 
         return self._contact_repository.create(new_contact)
 
+    def delete_all(self):
+        user = user_service.get_current()
+        return self._contact_repository.delete_all(user.id)
+
 
 contact_service = ContactService()

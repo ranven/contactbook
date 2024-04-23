@@ -44,7 +44,7 @@ class ContactsForm:
 
         try:
             contact_service.create_contact(
-                first_name, last_name, phone, email, role)
+                first_name, last_name, email, phone, role)
             self._handle_create()
         except ContactCreationError:
             self._show_error("Error creating contact")

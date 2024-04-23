@@ -35,9 +35,15 @@ class ContactRepository:
                        row["created_at"],
                        row["user"]) if row else None
 
-    def delete_all(self):
+    def delete_all(self, user_id):
         cursor = self._connection.cursor()
-        cursor.execute("DELETE FROM contacts")
+        cursor.execute("DELETE FROM contacts WHERE user = ?", (user_id, ))
+        self._connection.commit()
+
+    def delete_one(self, contact_id):
+        cursor = self._connection.cursor()
+        cursor.execute(
+            "DELETE FROM contacts WHERE contact_id = ?", (contact_id, ))
         self._connection.commit()
 
     def create(self, contact):
