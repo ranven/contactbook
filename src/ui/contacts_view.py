@@ -1,3 +1,4 @@
+from tkinter import Canvas
 from tkinter import ttk, constants
 from services.user_service import user_service
 from services.contact_service import contact_service
@@ -11,6 +12,8 @@ class ContactsView:
     def __init__(self, root, handle_logout, handle_create):
         self._root = root
         self._frame = None
+        self._canvas = None
+        self._scrollbar = None
         self._handle_logout = handle_logout
         self._handle_create = handle_create
         self._contacts = []
@@ -55,10 +58,29 @@ class ContactsView:
         )
         header_label.pack(pady=10)
 
+        self._initialize_scrollbar()
+
         self._contacts = contact_service.get_contacts()
 
         for contact in self._contacts:
             self._initialize_contact(contact)
+
+    def _initialize_scrollbar(self):
+        self._canvas = Canvas(self._frame)
+        self._canvas.pack(side=constants.LEFT,
+                          fill=constants.BOTH, expand=True)
+
+        self._scrollbar = ttk.Scrollbar(
+            self._frame, orient=constants.VERTICAL, command=self._canvas.yview)
+        self._scrollbar.pack(side=constants.RIGHT, fill=constants.Y)
+        self._canvas.configure(yscrollcommand=self._scrollbar.set)
+
+        self._inner_frame = ttk.Frame(self._canvas)
+        self._canvas.create_window(
+            (0, 0), window=self._inner_frame, anchor=constants.NW)
+
+        self._inner_frame.bind("<Configure>", lambda e: self._canvas.configure(
+            scrollregion=self._canvas.bbox("all")))
 
     def _initialize_contact(self, contact):
         style = ttk.Style()
@@ -66,7 +88,7 @@ class ContactsView:
         style.configure("ContactLabel.TLabel", background="white")
 
         contact_frame = ttk.Frame(
-            master=self._frame, style="ContactFrame.TFrame")
+            master=self._inner_frame, style="ContactFrame.TFrame")
         contact_frame.config(padding=8, borderwidth=1)
 
         first_name_label = ttk.Label(
@@ -109,4 +131,4 @@ class ContactsView:
             master=contact_frame, text=contact.role, style="ContactLabel.TLabel")
         role_value.grid(row=1, column=3, sticky="w")
 
-        contact_frame.pack(fill=constants.X, padx=10, pady=(5, 0))
+        contact_frame.pack(fill=constants.X, expand=True, padx=10, pady=(5, 0))
