@@ -1,6 +1,7 @@
 
 from tkinter import ttk, constants
 from services.contact_service import contact_service
+from services.user_service import user_service
 
 
 class ContactCreationError(Exception):
@@ -19,6 +20,7 @@ class ContactsForm:
         self._role_entry = None
         self._error_variable = None
         self._error_label = None
+        self._user = user_service.get_current()
 
         self._initialize()
 
@@ -41,10 +43,9 @@ class ContactsForm:
         phone = self._phone_entry.get()
         email = self._email_entry.get()
         role = self._role_entry.get()
-
         try:
             contact_service.create_contact(
-                first_name, last_name, email, phone, role)
+                first_name, last_name, email, phone, role, self._user.id)
             self._handle_create()
         except ContactCreationError:
             self._show_error("Error creating contact")

@@ -20,6 +20,7 @@ class ContactsView:
         self._contacts = []
         self._contact_form_frame = None
         self._contact_form_view = None
+        self._user = user_service.get_current()
         self._initialize()
 
     def pack(self):
@@ -33,7 +34,7 @@ class ContactsView:
         self._handle_logout()
 
     def _delete_all_handler(self):
-        contact_service.delete_all()
+        contact_service.delete_all(self._user.id)
         self._handle_delete()
 
     def _initialize(self):
@@ -42,7 +43,8 @@ class ContactsView:
         self._initialize_header()
         self._initialize_scrollbar()
 
-        self._contacts = contact_service.get_contacts()
+        self._contacts = contact_service.get_contacts(self._user.id)
+
         for contact in self._contacts:
             self._initialize_contact(contact)
 
