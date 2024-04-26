@@ -112,44 +112,22 @@ class ContactsView:
             master=self._inner_frame, style="ContactFrame.TFrame")
         contact_frame.config(padding=8, borderwidth=1)
 
-        first_name_label = ttk.Label(
-            master=contact_frame, text="First Name:", style="ContactLabel.TLabel")
-        first_name_label.grid(row=0, column=0, sticky="w")
+        labels = [
+            ("First Name:", contact.first_name, 0, 0, 10),
+            ("Last Name:", contact.last_name, 1, 0, 10),
+            ("Email:", contact.email, 2, 0, 10),
+            ("Phone:", contact.phone, 0, 2, 25),
+            ("Role:", contact.role, 1, 2, 25)
+        ]
 
-        first_name_value = ttk.Label(
-            master=contact_frame, text=contact.first_name, style="ContactLabel.TLabel")
-        first_name_value.grid(row=0, column=1, sticky="w")
+        for label_text, value, row, column, padx_value in labels:
+            label = ttk.Label(master=contact_frame,
+                              text=label_text, style="ContactLabel.TLabel")
+            label.grid(row=row, column=column, sticky="w")
 
-        last_name_label = ttk.Label(
-            master=contact_frame, text="Last Name:", style="ContactLabel.TLabel")
-        last_name_label.grid(row=1, column=0, sticky="w")
-
-        last_name_value = ttk.Label(
-            master=contact_frame, text=contact.last_name, style="ContactLabel.TLabel")
-        last_name_value.grid(row=1, column=1, sticky="w")
-
-        email_label = ttk.Label(
-            master=contact_frame, text="Email:", style="ContactLabel.TLabel")
-        email_label.grid(row=2, column=0, sticky="w")
-
-        email_value = ttk.Label(
-            master=contact_frame, text=contact.email, style="ContactLabel.TLabel")
-        email_value.grid(row=2, column=1, sticky="w")
-
-        phone_label = ttk.Label(
-            master=contact_frame, text="Phone:", style="ContactLabel.TLabel")
-        phone_label.grid(row=0, column=2, sticky="w", padx=25)
-
-        phone_value = ttk.Label(
-            master=contact_frame, text=contact.phone, style="ContactLabel.TLabel")
-        phone_value.grid(row=0, column=3, sticky="w")
-
-        role_label = ttk.Label(
-            master=contact_frame, text="Role:", style="ContactLabel.TLabel")
-        role_label.grid(row=1, column=2, sticky="w", padx=25)
-
-        role_value = ttk.Label(
-            master=contact_frame, text=contact.role, style="ContactLabel.TLabel")
-        role_value.grid(row=1, column=3, sticky="w")
+            value_label = ttk.Label(
+                master=contact_frame, text=value, style="ContactLabel.TLabel")
+            value_label.grid(row=row, column=column + 1, sticky="w",
+                             padx=padx_value)
 
         contact_frame.pack(fill=constants.X, expand=True, padx=10, pady=(5, 0))

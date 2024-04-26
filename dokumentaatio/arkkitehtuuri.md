@@ -2,7 +2,7 @@
 
 Ohjelman rakenne noudattaa kerrosarkkitehtuuria, jonka pakkausrakenne on seuraava:
 
-![Arkkitehtuuri](arkkitehtuuri.png)
+![Arkkitehtuuri](./image/arkkitehtuuri.png)
 
 Pakkaus _UI_ sisältää sovelluksen käyttöliittymäkoodin.
 Pakkaus _services_ vastaa sovelluslogiikasta ja koostuu seuraavista osista:
@@ -23,7 +23,7 @@ Pakkaus _entities_ sisältää luokkia, jotka kuvaavat sovelluksen käyttämiä 
 
 Kirjautumisnäkymässä käyttäjän syötettyä käyttäjänimen, salasanan sekä painettua login-painiketta, toimii sovellus seuraavanlaisesti:
 
-![Login](login-sekvenssikaavio.png)
+![Login](./image/login-sekvenssikaavio.png)
 
 Login-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan käyttäjiä hallinnoivan UserServicen metodia login parametreilla käyttäjätunnus ja salasana. Sovelluslogiikka kutsuu UserRepositoryn find_one-metodia tarkistaakseen onko käyttäjä olemassa. Mikäli käyttäjää ei löydy, UserService keskeyttää kirjautumisen ja ilmoittaa käyttäjälle virheestä. Mikäli käyttäjä löytyy, palauttaa metodi käyttäjän UserServicelle.
 
@@ -33,7 +33,7 @@ Kun UserService saa käyttäjän, tarkistaa se täsmääkö annettu salasana tie
 
 Rekisteröitymisnäkymässä käyttäjän syötettyä yli 4 merkkiä pitkän uniikin käyttäjänimen, yli 4 merkkiä pitkän salasanan sekä painettua register-painiketta, toimii sovellus seuraavanlaisesti:
 
-![Register](reg-sekvenssikaavio.png)
+![Register](./image/reg-sekvenssikaavio.png)
 
 Register-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan käyttäjiä hallinnoivan UserServicen metodia create_user parametreilla käyttäjätunnus ja salasana. Sovelluslogiikka kutsuu UserRepositoryn find_one-metodia tarkistaakseen onko käyttäjänimi jo käytössä. Mikäli samanniminen käyttäjä löytyy, UserService keskeyttää rekisteröitymisen ja ilmoittaa käyttäjälle virheestä. Mikäli käyttäjää ei löydy, palauttaa metodi None-arvon UserServicelle.
 
