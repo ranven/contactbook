@@ -12,5 +12,5 @@
 | 22.4. | 3        | Kontaktilistan ja luontilomakkeen käyttöliittymä, virheiden käsittely autentikaatiossa                              |
 | 23.4. | 4        | Kontaktilistan käyttöliittymän parannukset, kontaktien poiston toteutus, kontaktirepositorion testit, dokumentaatio |
 | 25.4. | 3        | UserServicen ja ContactServicen testien implementointi, user id:n tarkistamisen refaktorointi                       |
-| 26.4. | 1        | Käyttöohjeiden lisääminen, käyttöliittymäkoodin siistiminen                                                         |
+| 26.4. | 2        | Käyttöohjeiden lisääminen, käyttöliittymäkoodin siistiminen, arkkitehtuurikuvaus                                    |
 | Yht   | 25       |                                                                                                                     |
