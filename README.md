@@ -2,7 +2,7 @@
 
 Sovellus on osoitekirja johon käyttäjä voi tallentaa ja hallinnoida tallettamiaan yhteystietoja. Sovellusta voi käyttää useampi rekisteröitynyt käyttäjä joilla kaikilla on oma yhteystietolistansa.
 
-## Release
+## Releases
 
 [Viikon 5 release](https://github.com/ranven/contactbook/releases/tag/viikko5)
 
@@ -15,6 +15,8 @@ Sovellus on osoitekirja johon käyttäjä voi tallentaa ja hallinnoida tallettam
 [Changelog](/dokumentaatio/changelog.md)
 
 [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
+
+[Käyttöohje](/dokumentaatio/kayttoohje.md)
 
 ## Sovelluksen asennus ja käyttäminen
 
