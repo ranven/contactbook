@@ -20,7 +20,7 @@ class ContactRepository:
         """Palauttaa kaikki käyttäjän luomat kontaktit.
 
         Args:
-            uid: käyttäjän id
+            user_id: käyttäjän id
 
         Returns:
             Palauttaa listan Contact-olioita
