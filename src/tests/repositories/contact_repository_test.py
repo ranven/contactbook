@@ -57,6 +57,6 @@ class TestContactRepository(unittest.TestCase):
 
     def test_delete_one(self):
         contact_repository.create(self.contact_one)
-        contact_repository.delete_one(self.contact_one.id)
+        contact_repository.delete_one(self.user_one.id, self.contact_one.id)
         contact = contact_repository.find_one(self.contact_one.id)
         self.assertEqual(contact, None)

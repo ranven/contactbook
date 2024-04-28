@@ -83,15 +83,26 @@ class ContactService:
 
         Args:
             user_id käyttäjän id
-
-        Returns:
-            Palauttaa listan Contact-olioita
-
         """
+
         if user_id is None:
             raise NoUserError("No user is logged in.")
 
         self._contact_repository.delete_all(user_id)
+
+    def delete_one(self, user_id, contact_id):
+        """Tarkistaa käyttäjän id'n ja kutsuu contact_repositoryn delete_one-metodia 
+        poistaakseen yhden kontaktin annetun id'n perusteella.
+
+        Args: 
+            user_id käyttäjän id
+            contact_id poistettavan käyttäjän id 
+        """
+
+        if user_id is None:
+            raise NoUserError("No user is logged in.")
+
+        self._contact_repository.delete_one(user_id, contact_id)
 
 
 contact_service = ContactService()

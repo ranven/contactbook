@@ -13,4 +13,5 @@
 | 23.4. | 4        | Kontaktilistan käyttöliittymän parannukset, kontaktien poiston toteutus, kontaktirepositorion testit, dokumentaatio |
 | 25.4. | 3        | UserServicen ja ContactServicen testien implementointi, user id:n tarkistamisen refaktorointi                       |
 | 26.4. | 3        | Käyttöohjeiden lisääminen, käyttöliittymäkoodin siistiminen, arkkitehtuurikuvaus, docstring-dokumentaatio           |
-| Yht   | 27       |                                                                                                                     |
+| 28.4. | 1        | Yksittäisen yhteystiedon poiston toteutus, testit ja dokumentaatio toiminnallisuudelle                              |
+| Yht   | 28       |                                                                                                                     |

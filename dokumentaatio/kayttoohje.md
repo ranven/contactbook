@@ -44,6 +44,12 @@ Kirjautunut käyttäjä voi nähdä yhteystietojen listausnäkymän, jonka yllä
 
 Luomisnäkymässä käyttäjä voi syöttää uuden yhteystiedon etu- ja sukunimen, sähköpostiosoitteen, puhelinnumeron sekä roolin ja lopuksi painaa "Create"-painiketta luodakseen yhteystiedon ja lisätäkseen sen omaan yhteystietolistaansa. Tämän jälkeen käyttäjä siirtyy takaisin listausnäkymään, johon uusi yhteystieto on ilmestynyt. "Cancel"-painiketta painamalla käyttäjä siirtyy takaisin listausnäkymään luomatta uutta yhteystietoa.
 
-![](./image/screenshot-list-delete.png)
+![](./image/screenshot-list-delete-all.png)
 
-Käyttäjä voi nähdä luomansa yhteystiedot listausnäkymässä. Käyttäjä voi poistaa kaikki luomansa yhteystiedot ja tyhjentää yhteystietolistansa painamalla "Delete all"-painiketta. Käyttäjä voi myös kirjautua ulos sovelluksesta painamalla "Log out"-painiketta, joka siirtää käyttäjän takaisin kirjautumisnäkymään.
+Käyttäjä voi nähdä luomansa yhteystiedot listausnäkymässä. Käyttäjä voi poistaa kaikki luomansa yhteystiedot ja tyhjentää yhteystietolistansa painamalla "Delete all"-painiketta.
+
+![](./image/screenshot-list-delete-one.png)
+
+Käyttäjä voi poistaa yksittäisen yhteystiedon painamalla "X"-painiketta kyseisen yhteystiedon kohdalla.
+
+Käyttäjä voi myös kirjautua ulos sovelluksesta painamalla "Log out"-painiketta, joka siirtää käyttäjän takaisin kirjautumisnäkymään.

@@ -31,3 +31,6 @@
 
 - Testattu että käyttäjän rekisteröityminen ja kirjautuminen toimii oikeilla tunnuksilla ja epäonnistuu liian lyhyillä, käytössä olevilla tai väärillä tunnuksilla
 - Testattu että kontaktien luominen, hakeminen ja poistaminen toimii odotetulla tavalla kirjautuneelle käyttäjälle
+- Käyttäjä voi kirjautuneena ollessaan poistaa yksittäisen lisäämänsä yhteystiedon graafisen käyttöliittymän kautta
+- Lisätty käyttöohjeet, docstring-dokumentaatio sekä laajempi arkkitehtuurikuvaus
+- Parannettu koodin laatua ja luettavuutta

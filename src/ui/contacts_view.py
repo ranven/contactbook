@@ -9,14 +9,15 @@ class ContactCreationError(Exception):
 
 
 class ContactsView:
-    def __init__(self, root, handle_logout, handle_create, handle_delete):
+    def __init__(self, root, handle_logout, handle_create, handle_delete_all, handle_delete_one):
         self._root = root
         self._frame = None
         self._canvas = None
         self._scrollbar = None
         self._handle_logout = handle_logout
         self._handle_create = handle_create
-        self._handle_delete = handle_delete
+        self._handle_delete_all = handle_delete_all
+        self._handle_delete_one = handle_delete_one
         self._contacts = []
         self._contact_form_frame = None
         self._contact_form_view = None
@@ -35,7 +36,11 @@ class ContactsView:
 
     def _delete_all_handler(self):
         contact_service.delete_all(self._user.id)
-        self._handle_delete()
+        self._handle_delete_all()
+
+    def _delete_one_handler(self, contact_id):
+        contact_service.delete_one(self._user.id, contact_id)
+        self._handle_delete_one()
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
@@ -129,5 +134,17 @@ class ContactsView:
                 master=contact_frame, text=value, style="ContactLabel.TLabel")
             value_label.grid(row=row, column=column + 1, sticky="w",
                              padx=padx_value)
+
+        delete_button = ttk.Button(
+            master=contact_frame,
+            text="X",
+            command=lambda: self._delete_one_handler(contact.id),
+            style="Red.TButton",
+        )
+        delete_button.grid(row=0, column=5, sticky="ne")
+
+        style = ttk.Style()
+        style.map("Red.TButton", background=[
+            ('active', 'red'), ('!active', 'lightgrey')], )
 
         contact_frame.pack(fill=constants.X, expand=True, padx=10, pady=(5, 0))

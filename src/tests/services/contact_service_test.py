@@ -16,7 +16,9 @@ class FakeContactRepository:
         self.contacts = []
 
     def create(self, contact):
+        contact.id = uuid.uuid4().hex
         self.contacts.append(contact)
+        return contact
 
     def find_all(self, user_id):
         return [contact for contact in self.contacts if contact.user == user_id]
@@ -24,6 +26,10 @@ class FakeContactRepository:
     def delete_all(self, user_id):
         self.contacts = [
             contact for contact in self.contacts if contact.user != user_id]
+
+    def delete_one(self, user_id, contact_id):
+        self.contacts = [
+            contact for contact in self.contacts if not (contact.user == user_id and contact.id == contact_id)]
 
 
 class FakeUserRepository:
@@ -84,6 +90,17 @@ class TestContactService(unittest.TestCase):
         contacts = self.contact_service.get_contacts(user.id)
         self.assertEqual(len(contacts), 0)
 
+    def test_delete_one(self):
+        user = User('testusername', 'testpassword', '123')
+        contact = self.contact_service.create_contact(
+            'Pekka', 'Pouta', 'pekka@pouta.fi', '123456789', 'Meteorologi', user.id)
+
+        self.contact_service.delete_one(user.id, contact.id)
+
+        contacts = self.contact_service.get_contacts(user.id)
+        self.assertEqual(len(contacts), 0)
+        print(len(contacts))
+
     def test_create_contact_without_user(self):
         with self.assertRaises(NoUserError):
             self.contact_service.create_contact(
@@ -92,6 +109,10 @@ class TestContactService(unittest.TestCase):
     def test_delete_all_without_user(self):
         with self.assertRaises(NoUserError):
             self.contact_service.delete_all(None)
+
+    def test_delete_one_without_user(self):
+        with self.assertRaises(NoUserError):
+            self.contact_service.delete_one(None, "1")
 
     def test_get_contacts_without_user(self):
         with self.assertRaises(NoUserError):
