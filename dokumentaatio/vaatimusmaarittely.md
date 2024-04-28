@@ -31,7 +31,7 @@ sen graafinen käyttöliittymä toteutetaan Tkinter-kirjaston avulla. Sovellukse
 - Käyttäjä voi nähdä tallentamansa kontaktit kirjauduttuaan sovellukseen **TEHTY**
 - Käyttäjä voi lisätä uuden kontaktin **TEHTY**
   - Kontaktiin voi tallentaa nimen, sähköpostiosoitteen, puhelinnumeron sekä roolin. **TEHTY**
-- Käyttäjä voi poistaa kontaktin
+- Käyttäjä voi poistaa kontaktin **TEHTY**
 - Käyttäjä voi poistaa kaikki luomansa kontaktit **TEHTY**
 
 ## Jatkokehitysideat
