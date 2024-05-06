@@ -19,6 +19,7 @@ sen graafinen käyttöliittymä toteutetaan Tkinter-kirjaston avulla. Sovellukse
 
   - Käyttäjätunnuksen tulee olla uniikki ja vähintään 4 merkkiä pitkä **TEHTY**
   - Salasanan tulee olla vähintään 4 merkkiä pitkä **TEHTY**
+  - Käyttäjä näkee virheilmoituksen mikäli nämä ehdot eivät täyty **TEHTY**
 
 - Käyttäjä voi kirjautua sovellukseen **TEHTY**
 
@@ -31,7 +32,8 @@ sen graafinen käyttöliittymä toteutetaan Tkinter-kirjaston avulla. Sovellukse
 - Käyttäjä voi nähdä tallentamansa kontaktit kirjauduttuaan sovellukseen **TEHTY**
 - Käyttäjä voi lisätä uuden kontaktin **TEHTY**
   - Kontaktiin voi tallentaa nimen, sähköpostiosoitteen, puhelinnumeron sekä roolin. **TEHTY**
-- Käyttäjä voi poistaa kontaktin **TEHTY**
+  - Käyttäjä näkee virheilmoituksen mikäli annettu puhelinnumero ei ole numeroarvo **TEHTY**
+- Käyttäjä voi poistaa yksittäisen kontaktin **TEHTY**
 - Käyttäjä voi poistaa kaikki luomansa kontaktit **TEHTY**
 
 ## Jatkokehitysideat

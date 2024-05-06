@@ -14,5 +14,5 @@
 | 25.4. | 3        | UserServicen ja ContactServicen testien implementointi, user id:n tarkistamisen refaktorointi                       |
 | 26.4. | 3        | Käyttöohjeiden lisääminen, käyttöliittymäkoodin siistiminen, arkkitehtuurikuvaus, docstring-dokumentaatio           |
 | 28.4. | 1        | Yksittäisen yhteystiedon poiston toteutus, testit ja dokumentaatio toiminnallisuudelle                              |
-| 6.5.  | 1        | Virheilmoitusten parantelu rekisteröitymisnäkymässä, koodin siistiminen, dokumentaatio                              |
+| 6.5.  | 1        | Virheilmoitusten parantelu rekisteröitymisnäkymässä ja kontaktin luonnissa, koodin siistiminen, dokumentaatio       |
 | Yht   | 29       |                                                                                                                     |

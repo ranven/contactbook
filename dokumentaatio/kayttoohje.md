@@ -42,7 +42,9 @@ Kirjautunut käyttäjä voi nähdä yhteystietojen listausnäkymän, jonka yllä
 
 ![](./image/screenshot-create-contact.png)
 
-Luomisnäkymässä käyttäjä voi syöttää uuden yhteystiedon etu- ja sukunimen, sähköpostiosoitteen, puhelinnumeron sekä roolin ja lopuksi painaa "Create"-painiketta luodakseen yhteystiedon ja lisätäkseen sen omaan yhteystietolistaansa. Tämän jälkeen käyttäjä siirtyy takaisin listausnäkymään, johon uusi yhteystieto on ilmestynyt. "Cancel"-painiketta painamalla käyttäjä siirtyy takaisin listausnäkymään luomatta uutta yhteystietoa.
+Luomisnäkymässä käyttäjä voi syöttää uuden yhteystiedon etu- ja sukunimen, sähköpostiosoitteen, puhelinnumeron sekä roolin ja lopuksi painaa "Create"-painiketta luodakseen yhteystiedon ja lisätäkseen sen omaan yhteystietolistaansa. Puhelinnumeron tulee olla sarja numeroita, ja mikäli syöte ei vastaa tätä vaatimusta, ilmoittaa sovellus virheestä eikä yhteystiedon luonti onnistu.
+
+Onnistuneen luomisen jälkeen käyttäjä siirtyy takaisin listausnäkymään, johon uusi yhteystieto on ilmestynyt. "Cancel"-painiketta painamalla käyttäjä siirtyy takaisin listausnäkymään luomatta uutta yhteystietoa.
 
 ![](./image/screenshot-list-delete-all.png)
 

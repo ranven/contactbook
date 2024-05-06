@@ -38,4 +38,5 @@
 ## Viikko 7
 
 - Paranneltu virheilmoituksia käyttäjän rekisteröityessä epäkelvoilla tunnuksilla
+- Käyttäjä näkee virheilmoituksen mikäli kontaktia luodessa annettu puhelinnumero ei ole numeroarvo
 - Paranneltu koodin laatua ja dokumentaatiota
