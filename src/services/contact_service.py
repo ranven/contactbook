@@ -1,4 +1,5 @@
 import uuid
+import re
 from repositories.contact_repository import contact_repository
 from entities.contact import Contact
 
@@ -9,6 +10,11 @@ class NoUserError(Exception):
 
 class ContactCreationError(Exception):
     """Luokka joka vastaa kontaktin luomisessa viallisen syötteen takia tapahtuvasta virheestä"""
+
+
+class PhoneNumberError(Exception):
+    """Luokka joka vastaa kontaktin luomisessa puhelinnumero-kentän 
+    viallisuuden takia tapahtuvasta virheestä"""
 
 
 class ContactService:
@@ -47,8 +53,9 @@ class ContactService:
         return self._contact_repository.find_all(user_id)
 
     def create_contact(self, first_name, last_name, email, phone, role, user_id):
-        """Tarkistaa käyttäjän id'n ja luo argumenttien kentistä Contact-olion sekä 
-        id'n kontaktille. 
+        """Tarkistaa käyttäjän id'n sekä puhelinnumeron oikeellisen formaatin ja
+        luo argumenttien kentistä Contact-olion sekä id'n kontaktille. 
+
         Kutsuu contact_repositoryn create-metodia luodakseen kontaktin. 
         Nostaa virheilmoituksen mikäli käyttäjän id'tä ei ole.
 
@@ -67,6 +74,9 @@ class ContactService:
 
         if user_id is None:
             raise NoUserError("No user is logged in.")
+
+        if not re.search(r'^([\s\d]+)$', phone):
+            raise PhoneNumberError("Phone number should be a number")
 
         new_contact = Contact(
             contact_id=uuid.uuid4().hex,

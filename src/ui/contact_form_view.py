@@ -1,6 +1,6 @@
 
-from tkinter import ttk, constants
-from services.contact_service import contact_service, ContactCreationError
+from tkinter import ttk, constants, StringVar
+from services.contact_service import contact_service, ContactCreationError, PhoneNumberError
 from services.user_service import user_service
 
 
@@ -49,11 +49,22 @@ class ContactsForm:
             contact_service.create_contact(
                 first_name, last_name, email, phone, role, self._user.id)
             self._handle_create()
+
+        except PhoneNumberError:
+            self._show_error(
+                "Phone number should only contain numbers from 0 to 9")
+
         except ContactCreationError:
             self._show_error("Error creating contact")
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)
+        self._error_variable = StringVar(self._frame)
+        self._error_label = ttk.Label(
+            master=self._frame,
+            textvariable=self._error_variable,
+            foreground="red"
+        )
         label = ttk.Label(master=self._frame, text="Add new contact")
 
         self._initialize_firstname_field()

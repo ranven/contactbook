@@ -63,6 +63,7 @@ class UserService:
 
         """
         existing_user = self._user_repository.find_one(username)
+
         if existing_user:
             raise UsernameTakenError((f"Username {username} already exists"))
 
