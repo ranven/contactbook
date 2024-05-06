@@ -31,7 +31,7 @@ class TestUserService(unittest.TestCase):
 
     def test_create_user(self):
         self.user_service.create_user('testuser', 'testpassword')
-        users = self.user_service.get_users()
+        users = self.user_service.get_all_users()
 
         self.assertEqual(len(users), 1)
         self.assertEqual(users[0].username, 'testuser')

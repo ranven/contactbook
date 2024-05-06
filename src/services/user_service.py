@@ -4,11 +4,11 @@ from entities.user import User
 
 
 class InvalidCredentialsError(Exception):
-    pass
+    """Luokka joka epäkelvon käyttäjänimen ja/tai salasanan aiheuttamasta virheestä"""
 
 
 class UsernameTakenError(Exception):
-    pass
+    """Luokka joka vastaa jo käytössä olevan käyttäjänimen rekisteröinnin aiheuttamasta virheestä"""
 
 
 class UserService:
@@ -26,7 +26,7 @@ class UserService:
         self._user = None
         self._user_repository = user_repo
 
-    def get_users(self):
+    def get_all_users(self):
         """Kutsuu user_repositoryn find_all-metodia hakeakseen kaikki käyttäjät.
 
         Returns:

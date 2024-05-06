@@ -33,9 +33,10 @@ Sovelluksen tietomallin muodostavat luokat _User_ ja _Contact_, jotka kuvaavat k
 
 Luokka _ContactService_ vastaa käyttöliittymän kontaktilistauksen ja kontaktilomakkeen toimintojen metodeista, joita ovat:
 
-- get_contacts(user_id)
+- get_all_contacts(user_id)
 - create_contact(self, first_name, last_name, email, phone, role, user_id)
-- delete_all(user_id)
+- delete_all_contacts(user_id)
+- delete_one_contact(self, user_id, contact_id)
 
 _ContactService_ pääsee käsiksi kontaktien tallennuksesta/hakemisesta/poistamisesta vastaavan pakkauksessa repositories sijaitsevan luokan ContactRepository kautta.
 
@@ -43,8 +44,8 @@ _ContactService_ pääsee käsiksi kontaktien tallennuksesta/hakemisesta/poistam
 
 Luokka _UserService_ vastaa käyttöliittymän kirjautumisen ja rekisteröitymisen toimintojen metodeista sekä tämänhetkisen käyttäjän id'n tarkistamisesta:
 
-- get_users()
-- get_current()
+- get_all_users()
+- get_current_user()
 - create_user(username, password)
 - logout()
 - login(username password)

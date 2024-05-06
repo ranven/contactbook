@@ -34,3 +34,8 @@
 - Käyttäjä voi kirjautuneena ollessaan poistaa yksittäisen lisäämänsä yhteystiedon graafisen käyttöliittymän kautta
 - Lisätty käyttöohjeet, docstring-dokumentaatio sekä laajempi arkkitehtuurikuvaus
 - Parannettu koodin laatua ja luettavuutta
+
+## Viikko 7
+
+- Paranneltu virheilmoituksia käyttäjän rekisteröityessä epäkelvoilla tunnuksilla
+- Paranneltu koodin laatua ja dokumentaatiota

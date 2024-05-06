@@ -5,12 +5,10 @@ from entities.contact import Contact
 
 class NoUserError(Exception):
     """Luokka joka vastaa puuttuvan käyttäjä-idn aiheuttamasta virheestä"""
-    pass
 
 
 class ContactCreationError(Exception):
     """Luokka joka vastaa kontaktin luomisessa viallisen syötteen takia tapahtuvasta virheestä"""
-    pass
 
 
 class ContactService:
