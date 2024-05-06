@@ -4,11 +4,10 @@ from services.user_service import user_service
 from services.contact_service import contact_service
 
 
-class ContactCreationError(Exception):
-    pass
-
-
 class ContactsView:
+    """Luokka joka vastaa käyttäjän kontaktien listaamisen käyttöliittymätoteutuksesta.
+    """
+
     def __init__(self, root, handle_logout, handle_create, handle_delete_all, handle_delete_one):
         self._root = root
         self._frame = None
@@ -21,25 +20,28 @@ class ContactsView:
         self._contacts = []
         self._contact_form_frame = None
         self._contact_form_view = None
-        self._user = user_service.get_current()
+        self._user = user_service.get_current_user()
         self._initialize()
 
     def pack(self):
+        """Pakkaa näkymän komponentit isäntäkomponentin sisään.
+        """
         self._frame.pack(fill=constants.BOTH, expand=True)
 
     def destroy(self):
+        """Tuhoaa näkymän komponentit."""
         self._frame.destroy()
 
     def _logout_handler(self):
         user_service.logout()
         self._handle_logout()
 
-    def _delete_all_handler(self):
-        contact_service.delete_all(self._user.id)
+    def _delete_all_contacts_handler(self):
+        contact_service.delete_all_contacts(self._user.id)
         self._handle_delete_all()
 
-    def _delete_one_handler(self, contact_id):
-        contact_service.delete_one(self._user.id, contact_id)
+    def _delete_one_contact_handler(self, contact_id):
+        contact_service.delete_one_contact(self._user.id, contact_id)
         self._handle_delete_one()
 
     def _initialize(self):
@@ -64,7 +66,7 @@ class ContactsView:
         delete_all_button = ttk.Button(
             master=top_frame,
             text="Delete all",
-            command=self._delete_all_handler,
+            command=self._delete_all_contacts_handler,
             style="Red.TButton"
         )
 
@@ -138,7 +140,7 @@ class ContactsView:
         delete_button = ttk.Button(
             master=contact_frame,
             text="X",
-            command=lambda: self._delete_one_handler(contact.id),
+            command=lambda: self._delete_one_contact_handler(contact.id),
             style="Red.TButton",
         )
         delete_button.grid(row=0, column=5, sticky="ne")

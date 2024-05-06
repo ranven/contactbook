@@ -4,6 +4,12 @@ from entities.contact import Contact
 
 
 class NoUserError(Exception):
+    """Luokka joka vastaa puuttuvan käyttäjä-idn aiheuttamasta virheestä"""
+    pass
+
+
+class ContactCreationError(Exception):
+    """Luokka joka vastaa kontaktin luomisessa viallisen syötteen takia tapahtuvasta virheestä"""
     pass
 
 
@@ -39,6 +45,7 @@ class ContactService:
 
         if user_id is None:
             raise NoUserError("No user is logged in.")
+
         return self._contact_repository.find_all(user_id)
 
     def create_contact(self, first_name, last_name, email, phone, role, user_id):
@@ -75,7 +82,7 @@ class ContactService:
 
         return self._contact_repository.create(new_contact)
 
-    def delete_all(self, user_id):
+    def delete_all_contacts(self, user_id):
         """Tarkistaa käyttäjän id'n ja kutsuu contact_repositoryn delete_all-metodia 
         poistaakseen käyttäjän kontaktit. 
 
@@ -90,7 +97,7 @@ class ContactService:
 
         self._contact_repository.delete_all(user_id)
 
-    def delete_one(self, user_id, contact_id):
+    def delete_one_contact(self, user_id, contact_id):
         """Tarkistaa käyttäjän id'n ja kutsuu contact_repositoryn delete_one-metodia 
         poistaakseen yhden kontaktin annetun id'n perusteella.
 

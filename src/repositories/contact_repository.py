@@ -110,5 +110,5 @@ class ContactRepository:
 
 
 contact_repository = ContactRepository(get_db_connection())
-user = user_service.get_current()
+user = user_service.get_current_user()
 contacts = contact_repository.find_all(user.id if user else None)

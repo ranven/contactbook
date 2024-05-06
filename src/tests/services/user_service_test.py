@@ -72,4 +72,4 @@ class TestUserService(unittest.TestCase):
         self.user_service.create_user('testuser', 'testpassword')
         self.user_service.logout()
 
-        self.assertIsNone(self.user_service.get_current())
+        self.assertIsNone(self.user_service.get_current_user())

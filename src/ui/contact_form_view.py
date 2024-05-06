@@ -1,14 +1,13 @@
 
 from tkinter import ttk, constants
-from services.contact_service import contact_service
+from services.contact_service import contact_service, ContactCreationError
 from services.user_service import user_service
 
 
-class ContactCreationError(Exception):
-    pass
-
-
 class ContactsForm:
+    """Luokka joka vastaa kontaktin luomisen käyttöliittymätoteutuksesta.
+    """
+
     def __init__(self, root, handle_create):
         self._root = root
         self._handle_create = handle_create
@@ -20,14 +19,17 @@ class ContactsForm:
         self._role_entry = None
         self._error_variable = None
         self._error_label = None
-        self._user = user_service.get_current()
+        self._user = user_service.get_current_user()
 
         self._initialize()
 
     def pack(self):
-        self._frame.pack(fill=constants.X)
+        """Pakkaa näkymän komponentit isäntäkomponentin sisään.
+        """
+        self._frame.pack(fill=constants.BOTH, expand=True)
 
     def destroy(self):
+        """Tuhoaa näkymän komponentit."""
         self._frame.destroy()
 
     def _show_error(self, message):

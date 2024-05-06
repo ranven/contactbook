@@ -3,6 +3,8 @@ from services.user_service import InvalidCredentialsError, user_service
 
 
 class LoginView:
+    """Luokka joka vastaa käyttäjän kirjautumisen käyttöliittymästä. """
+
     def __init__(self, root, handle_login, handle_show_register_view):
         self._root = root
         self._handle_login = handle_login
@@ -16,9 +18,12 @@ class LoginView:
         self._initialize()
 
     def pack(self):
-        self._frame.pack(fill=constants.X)
+        """Pakkaa näkymän komponentit isäntäkomponentin sisään.
+        """
+        self._frame.pack(fill=constants.BOTH, expand=True)
 
     def destroy(self):
+        """Tuhoaa näkymän komponentit."""
         self._frame.destroy()
 
     def _show_error(self, message):

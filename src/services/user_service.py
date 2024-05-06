@@ -35,7 +35,7 @@ class UserService:
         """
         return self._user_repository.find_all()
 
-    def get_current(self):
+    def get_current_user(self):
         """Hakee kirjautuneen käyttäjän tiedot.
 
         Returns:

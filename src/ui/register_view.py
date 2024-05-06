@@ -1,8 +1,11 @@
 from tkinter import ttk, StringVar, constants
-from services.user_service import user_service, InvalidCredentialsError
+from services.user_service import user_service, InvalidCredentialsError, UsernameTakenError
 
 
 class RegisterView:
+    """Luokka joka vastaa uuden käyttäjän rekisteröitymisen käyttöliittymätoteutuksesta.
+    """
+
     def __init__(self, root, handle_register, handle_show_login_view):
         self._root = root
         self._handle_register = handle_register
@@ -16,9 +19,12 @@ class RegisterView:
         self._initialize()
 
     def pack(self):
-        self._frame.pack(fill=constants.X)
+        """Pakkaa näkymän komponentit isäntäkomponentin sisään.
+        """
+        self._frame.pack(fill=constants.BOTH, expand=True)
 
     def destroy(self):
+        """Tuhoaa näkymän komponentit."""
         self._frame.destroy()
 
     def _show_error(self, message):
@@ -32,15 +38,13 @@ class RegisterView:
         username = self._username_entry.get()
         password = self._password_entry.get()
 
-        if len(username) == 0 or len(password) == 0:
-            raise InvalidCredentialsError(
-                "Username and password are required.")
-
         try:
             user_service.create_user(username, password)
             self._handle_register()
         except InvalidCredentialsError:
             self._show_error("Invalid username or password.")
+        except UsernameTakenError:
+            self._show_error("Username is taken.")
 
     def _initialize_username_field(self):
         username_label = ttk.Label(master=self._frame, text="Username")

@@ -58,7 +58,7 @@ class TestContactService(unittest.TestCase):
         self.contact_repo = FakeContactRepository()
         self.contact_service = ContactService(contact_repo=self.contact_repo)
 
-    def test_get_contacts(self):
+    def test_get_all_contacts(self):
         user = User('testusername', 'testpassword', '123')
 
         self.contact_service.create_contact(
@@ -79,41 +79,40 @@ class TestContactService(unittest.TestCase):
         contacts = self.contact_service.get_contacts(user.id)
         self.assertEqual(len(contacts), 2)
 
-    def test_delete_all(self):
+    def test_delete_all_contacts(self):
         user = User('testusername', 'testpassword', '123')
         self.contact_service.create_contact(
             'Pekka', 'Pouta', 'pekka@pouta.fi', '123456789', 'Meteorologi', user.id)
         self.contact_service.create_contact(
             'Ville', 'Valo', 'ville@valo.fi', '987654321', 'Muusikko', user.id)
 
-        self.contact_service.delete_all(user.id)
+        self.contact_service.delete_all_contacts(user.id)
         contacts = self.contact_service.get_contacts(user.id)
         self.assertEqual(len(contacts), 0)
 
-    def test_delete_one(self):
+    def test_delete_one_contact(self):
         user = User('testusername', 'testpassword', '123')
         contact = self.contact_service.create_contact(
             'Pekka', 'Pouta', 'pekka@pouta.fi', '123456789', 'Meteorologi', user.id)
 
-        self.contact_service.delete_one(user.id, contact.id)
+        self.contact_service.delete_one_contact(user.id, contact.id)
 
         contacts = self.contact_service.get_contacts(user.id)
         self.assertEqual(len(contacts), 0)
-        print(len(contacts))
 
     def test_create_contact_without_user(self):
         with self.assertRaises(NoUserError):
             self.contact_service.create_contact(
                 'Pekka', 'Pouta', 'pekka@pouta.fi', '123456789', 'Meteorologi', None)
 
-    def test_delete_all_without_user(self):
+    def test_delete_all_contacts_without_user(self):
         with self.assertRaises(NoUserError):
-            self.contact_service.delete_all(None)
+            self.contact_service.delete_all_contacts(None)
 
-    def test_delete_one_without_user(self):
+    def test_delete_one_contact_without_user(self):
         with self.assertRaises(NoUserError):
-            self.contact_service.delete_one(None, "1")
+            self.contact_service.delete_one_contact(None, "1")
 
-    def test_get_contacts_without_user(self):
+    def test_get_all_contacts_without_user(self):
         with self.assertRaises(NoUserError):
             self.contact_service.get_contacts(None)
