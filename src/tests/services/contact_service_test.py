@@ -1,7 +1,7 @@
 import unittest
 import uuid
 from entities.user import User
-from services.contact_service import ContactService, NoUserError
+from services.contact_service import ContactService, NoUserError, PhoneNumberError
 from entities.contact import Contact
 from services.user_service import UserService
 
@@ -78,6 +78,16 @@ class TestContactService(unittest.TestCase):
 
         contacts = self.contact_service.get_contacts(user.id)
         self.assertEqual(len(contacts), 2)
+
+    def test_create_contact_with_incorrect_phone_number(self):
+        user = User('testusername', 'testpassword', '123')
+
+        with self.assertRaises(PhoneNumberError):
+            self.contact_service.create_contact(
+                'Pekka', 'Pouta', 'pekka@pouta.fi', 'not a numerical value', 'Meteorologi', user.id)
+
+        contacts = self.contact_service.get_contacts(user.id)
+        self.assertEqual(len(contacts), 0)
 
     def test_delete_all_contacts(self):
         user = User('testusername', 'testpassword', '123')
