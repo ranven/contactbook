@@ -8,7 +8,7 @@ Sovellus on osoitekirja johon käyttäjä voi tallentaa ja hallinnoida tallettam
 
 [Viikon 6 release](https://github.com/ranven/contactbook/releases/tag/viikko6)
 
-[Loppupalautus](https://github.com/ranven/contactbook/releases/tag/loppupalautus
+[Loppupalautus](https://github.com/ranven/contactbook/releases/tag/loppupalautus)
 
 ## Dokumentaatio
 
