@@ -67,33 +67,41 @@ Pakkauksen repositories luokat **UserRepository** ja **ContactRepository** vasta
 
 SQLite-tietokannan taulut `users` ja `contacts` alustetaan [initialize_database.py](https://github.com/ranven/contactbook/blob/main/src/initialize_db.py)-tiedostossa. Sovelluksen testeille on oma eristetty tietokantansa, jolloin testit voidaan suorittaa erillisenä tuotantotietokannasta.
 
-## Päätoiminnallisuudet
+<br/>
 
-### Käyttäjän kirjautuminen
+# Päätoiminnallisuudet
+
+## Käyttäjän kirjautuminen
 
 Kirjautumisnäkymässä käyttäjän syötettyä käyttäjänimen, salasanan sekä painettua _login_-painiketta, toimii sovellus seuraavanlaisesti:
 
-![Login](./image/login-sekvenssikaavio.png)
+<p>
+    <img src="./image/login-sekvenssikaavio.png"/>
+</p>
 
 Login-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan käyttäjiä hallinnoivan UserServicen metodia login parametreilla käyttäjätunnus ja salasana. Sovelluslogiikka kutsuu **UserRepositoryn** `find_one`-metodia tarkistaakseen onko käyttäjä olemassa. Mikäli käyttäjää ei löydy, **UserService** keskeyttää kirjautumisen ja ilmoittaa käyttäjälle virheestä. Mikäli käyttäjä löytyy, palauttaa metodi käyttäjän **UserServicelle**.
 
 Kun **UserService** saa käyttäjän, tarkistaa se täsmääkö annettu salasana tietokannassa olevan käyttäjän salasanan kanssa. Jos salasana täsmää, kirjautuminen onnistuu ja käyttöliittymän näkymäksi vaihtuu **ContactsView**, johon sovellus renderöi kirjautuneen käyttäjän tallentamat kontaktit.
 
-### Uuden käyttäjän luominen
+## Uuden käyttäjän luominen
 
 Rekisteröitymisnäkymässä käyttäjän syötettyä yli 4 merkkiä pitkän uniikin käyttäjänimen, yli 4 merkkiä pitkän salasanan sekä painettua _register_-painiketta, toimii sovellus seuraavanlaisesti:
 
-![Register](./image/reg-sekvenssikaavio.png)
+<p>
+    <img src="./image/reg-sekvenssikaavio.png"/>
+</p>
 
 Register-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan käyttäjiä hallinnoivan UserServicen metodia `create_user` parametreilla käyttäjätunnus ja salasana. Sovelluslogiikka kutsuu **UserRepositoryn** `find_one`-metodia tarkistaakseen onko käyttäjänimi jo käytössä. Mikäli samanniminen käyttäjä löytyy, **UserService** keskeyttää rekisteröitymisen ja ilmoittaa käyttäjälle virheestä. Mikäli käyttäjää ei löydy, palauttaa metodi None-arvon **UserServicelle**.
 
 Kun **UserService** varmistuu käyttäjänimen saatavuudesta, luo se `User`-olion johon se generoi uuid-kirjaston avulla käyttäjän uniikin id'n uuid-kirjaston avulla. Tämän jälkeen sovelluslogiikka tallettaa käyttäjä-olion tietokantaan kutsumalla **UserRepositoryn** metodia `create` parametrilla User. Onnistuneen tallentamisen seurauksena käyttäjä kirjataan sisään ja käyttöliittymän näkymäksi vaihtuu **ContactsView** johon sovellus renderöi kirjautuneen käyttäjän tallentamat kontaktit.
 
-### Uuden kontaktin luominen
+## Uuden kontaktin luominen
 
 Kontaktin luomislomakkeessa käyttäjän syötettyä etunimen, sukunimen, sähköpostin, puhelinnumeron (numeerisessa muodossa) ja roolin sekä painettua _create_-painiketta, toimii sovellus seuraavanlaisesti:
 
-[!Create](https://github.com/ranven/contactbook/blob/main/dokumentaatio/image/create-contact-sekvenssikaavio.png)
+<p>
+    <img src="./image/create-contact-sekvenssikaavio.png"/>
+</p>
 
 Create-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan kontakteja hallinnoivan **ContactServicen** metodia `create_contact` parametreilla etunimi, sukunimi, sähköposti, puhelinnumero, rooli sekä käyttäjän ID. Sovelluslogiikka tarkistaa parametreista puhelinnumeron olevan numeerisessa muodossa, kunkin parametrin olevan alle 100 merkkiä pitkiä ja käyttäjän IDn olemassaolon ja ilmoittaa virheestä mikäli jokin näistä ehdoista ei täyty.
 
@@ -101,11 +109,13 @@ Kun **ContactService** varmistuu kontaktin kenttien oikeellisuudesta, luo se `Co
 
 Tämän jälkeen sovelluslogiikka tallettaa `new_contact`-olion kutsumalla **ContactRepositoryn** metodia `create` parametrilla `new_contact`. Onnistuneen tallentamisen seurauksena palautusarvoksi saadaan luotu **Contact**-olio, ja käyttöliittymän näkymäksi vaihtuu **ContactsView** johon sovellus renderöi kirjautuneen käyttäjän tallentamat kontaktit, mukaanlukien juuri luotu uusi kontakti.
 
-### Yhden kontaktin poistaminen
+## Yhden kontaktin poistaminen
 
 Kontaktien listausnäkymässä käyttäjän painettua yksittäisen kontaktin X-painiketta, toimii sovellus seuraavanlaisesti:
 
-[!DelOne](https://github.com/ranven/contactbook/blob/main/dokumentaatio/image/del-one-sekvenssikaavio.png)
+<p>
+    <img src="./image/del-one-sekvenssikaavio.png"/>
+</p>
 
 X-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan kontakteja hallinnoivan **ContactServicen** metodia `delete_one_contact` parametreilla käyttäjän ID ja poistettavan kontaktin ID. Sovelluslogiikka tarkistaa käyttäjän IDn olemassaolon ja ilmoittaa virheestä mikäli tätä ei ole.
 
@@ -115,7 +125,9 @@ Tämän jälkeen sovelluslogiikka poistaa kontaktin kutsumalla **ContactReposito
 
 Kontaktien listausnäkymässä käyttäjän painettua _Delete all_-painiketta, toimii sovellus seuraavanlaisesti:
 
-[!DelAll](https://github.com/ranven/contactbook/blob/main/dokumentaatio/image/del-all-sekvenssikaavio.png)
+<p>
+    <img src="./image/del-all-sekvenssikaavio.png"/>
+</p>
 
 Delete all-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan kontakteja hallinnoivan **ContactServicen** metodia `delete_all_contacts` parametrilla käyttäjän ID. Sovelluslogiikka tarkistaa käyttäjän IDn olemassaolon ja ilmoittaa virheestä mikäli tätä ei ole.
 
