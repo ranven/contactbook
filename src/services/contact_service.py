@@ -76,7 +76,11 @@ class ContactService:
             raise NoUserError("No user is logged in.")
 
         if not re.search(r'^([\s\d]+)$', phone):
-            raise PhoneNumberError("Phone number should be a number")
+            raise PhoneNumberError("Phone number should be a number.")
+
+        if any(len(field) > 100 for field in [first_name, last_name, phone, email, role]):
+            raise ContactCreationError(
+                "Each field has a maximum length of 100 characters.")
 
         new_contact = Contact(
             contact_id=uuid.uuid4().hex,

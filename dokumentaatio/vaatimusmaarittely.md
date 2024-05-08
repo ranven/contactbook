@@ -2,7 +2,7 @@
 
 ## Sovelluksen idea
 
-Sovellus on osoitekirja, johon voidaan tallentaa yhteystietoja listaan. Sovellusta voi käyttää useampi rekisteröitynyt käyttäjä joilla kaikilla on oma yhteystietolistansa.
+Sovellus on osoitekirja, johon voidaan tallentaa yhteystietoja listaan sekä hallinnoida niitä. Sovellusta voi käyttää useampi rekisteröitynyt käyttäjä joilla kaikilla on oma yhteystietolistansa.
 
 ## Käyttäjäroolit
 
@@ -32,7 +32,7 @@ sen graafinen käyttöliittymä toteutetaan Tkinter-kirjaston avulla. Sovellukse
 - Käyttäjä voi nähdä tallentamansa kontaktit kirjauduttuaan sovellukseen **TEHTY**
 - Käyttäjä voi lisätä uuden kontaktin **TEHTY**
   - Kontaktiin voi tallentaa nimen, sähköpostiosoitteen, puhelinnumeron sekä roolin. **TEHTY**
-  - Käyttäjä näkee virheilmoituksen mikäli annettu puhelinnumero ei ole numeroarvo **TEHTY**
+  - Käyttäjä näkee virheilmoituksen mikäli annettu puhelinnumero ei ole numeroarvo tai jos jokin kenttien syötteistä on yli 100 merkkiä pitkä **TEHTY**
 - Käyttäjä voi poistaa yksittäisen kontaktin **TEHTY**
 - Käyttäjä voi poistaa kaikki luomansa kontaktit **TEHTY**
 

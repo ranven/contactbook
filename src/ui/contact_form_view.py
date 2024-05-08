@@ -55,7 +55,8 @@ class ContactsForm:
                 "Phone number should only contain numbers from 0 to 9")
 
         except ContactCreationError:
-            self._show_error("Error creating contact")
+            self._show_error(
+                "Each field has a maximum length of 100 characters.")
 
     def _initialize(self):
         self._frame = ttk.Frame(master=self._root)

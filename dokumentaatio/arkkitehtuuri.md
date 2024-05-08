@@ -95,17 +95,13 @@ Kontaktin luomislomakkeessa käyttäjän syötettyä etunimen, sukunimen, sähk�
 
 [!Create](./image/create-contact-sekvenssikaavio.png)
 
-Create-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan kontakteja hallinnoivan **ContactServicen** metodia `create_contact` parametreilla etunimi, sukunimi, sähköposti, puhelinnumero, rooli sekä käyttäjän ID. Sovelluslogiikka tarkistaa parametreista puhelinnumeron olevan numeerisessa muodossa sekä käyttäjän IDn olemassaolon ja ilmoittaa virheestä mikäli jompikumpi näistä ehdoista ei täyty.
+Create-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan kontakteja hallinnoivan **ContactServicen** metodia `create_contact` parametreilla etunimi, sukunimi, sähköposti, puhelinnumero, rooli sekä käyttäjän ID. Sovelluslogiikka tarkistaa parametreista puhelinnumeron olevan numeerisessa muodossa, kunkin parametrin olevan alle 100 merkkiä pitkiä ja käyttäjän IDn olemassaolon ja ilmoittaa virheestä mikäli jokin näistä ehdoista ei täyty.
 
 Kun **ContactService** varmistuu kontaktin kenttien oikeellisuudesta, luo se `Contact`-olion edellämainituista kentistä, joiden lisäksi generoi kontaktille uniikin id'n uuid-kirjaston avulla. Lisäksi olioon tallennetaan toistaiseksi `created_at`-arvoksi None, sillä tietokanta luo tyhjälle kentälle arvon kun kontakti tallennetaan pysyväismuistiin.
 
 Tämän jälkeen sovelluslogiikka tallettaa `new_contact`-olion kutsumalla **ContactRepositoryn** metodia `create` parametrilla `new_contact`. Onnistuneen tallentamisen seurauksena palautusarvoksi saadaan luotu **Contact**-olio, ja käyttöliittymän näkymäksi vaihtuu **ContactsView** johon sovellus renderöi kirjautuneen käyttäjän tallentamat kontaktit, mukaanlukien juuri luotu uusi kontakti.
 
-### Kontaktien poistaminen
-
-Kontaktien poistaminen tapahtuu kontaktien listausnäkymässä kahdella eri tavalla – joko kaikki kontaktit tai yksittäinen kontakti voidaan poistaa.
-
-#### Yhden kontaktin poistaminen
+### Yhden kontaktin poistaminen
 
 Kontaktien listausnäkymässä käyttäjän painettua yksittäisen kontaktin X-painiketta, toimii sovellus seuraavanlaisesti:
 
@@ -115,7 +111,7 @@ X-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan kontakteja hallinno
 
 Tämän jälkeen sovelluslogiikka poistaa kontaktin kutsumalla **ContactRepositoryn** metodia `delete_one` parametreilla käyttäjän ID ja poistettavan kontaktin ID. Onnistuneen poistamisen seurauksena palautusarvoksi saadaan None, ja kontaktilistaus renderöidään uudestaan jolloin poistettu kontakti poistuu listalta.
 
-### Kaikkien kontaktien poistaminen
+## Kaikkien kontaktien poistaminen
 
 Kontaktien listausnäkymässä käyttäjän painettua _Delete all_-painiketta, toimii sovellus seuraavanlaisesti:
 
