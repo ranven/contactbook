@@ -19,6 +19,8 @@ Sovellus on osoitekirja johon käyttäjä voi tallentaa ja hallinnoida tallettam
 
 [Käyttöohje](/dokumentaatio/kayttoohje.md)
 
+[Testausdokumentti](/dokumentaatio/testaus.md)
+
 ## Sovelluksen asennus ja käyttäminen
 
 Riippuvuuksien asennus:
