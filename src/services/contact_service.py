@@ -31,7 +31,6 @@ class ContactService:
             tietokantaoperaatioiden metodeja
         """
         self._contact_repository = contact_repo
-        self.contacts = None
 
     def get_contacts(self, user_id):
         """Tarkistaa käyttäjän id'n ja kutsuu contact_repositoryn find_all-metodia hakeakseen 

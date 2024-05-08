@@ -23,8 +23,8 @@ class UserService:
         Args: 
             user_repo: luokka josta kutsua käyttäjiin liittyvien tietokantaoperaatioiden metodeja
         """
-        self._user = None
         self._user_repository = user_repo
+        self._user = None
 
     def get_all_users(self):
         """Kutsuu user_repositoryn find_all-metodia hakeakseen kaikki käyttäjät.
@@ -77,6 +77,7 @@ class UserService:
         user = self._user_repository.create(
             User(username, password, uuid.uuid4().hex))
         self._user = user
+
         return user
 
     def logout(self):
@@ -100,9 +101,11 @@ class UserService:
 
         """
         user = self._user_repository.find_one(username)
+
         if not user or user.password != password:
             raise InvalidCredentialsError("Invalid username or password")
         self._user = user
+
         return user
 
 
