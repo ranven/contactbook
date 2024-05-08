@@ -93,7 +93,7 @@ Kun **UserService** varmistuu käyttäjänimen saatavuudesta, luo se `User`-olio
 
 Kontaktin luomislomakkeessa käyttäjän syötettyä etunimen, sukunimen, sähköpostin, puhelinnumeron (numeerisessa muodossa) ja roolin sekä painettua _create_-painiketta, toimii sovellus seuraavanlaisesti:
 
-[!Create](./image/create-contact-sekvenssikaavio.png)
+[!Create](https://github.com/ranven/contactbook/blob/main/dokumentaatio/image/create-contact-sekvenssikaavio.png)
 
 Create-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan kontakteja hallinnoivan **ContactServicen** metodia `create_contact` parametreilla etunimi, sukunimi, sähköposti, puhelinnumero, rooli sekä käyttäjän ID. Sovelluslogiikka tarkistaa parametreista puhelinnumeron olevan numeerisessa muodossa, kunkin parametrin olevan alle 100 merkkiä pitkiä ja käyttäjän IDn olemassaolon ja ilmoittaa virheestä mikäli jokin näistä ehdoista ei täyty.
 
@@ -105,7 +105,7 @@ Tämän jälkeen sovelluslogiikka tallettaa `new_contact`-olion kutsumalla **Con
 
 Kontaktien listausnäkymässä käyttäjän painettua yksittäisen kontaktin X-painiketta, toimii sovellus seuraavanlaisesti:
 
-[!DelOne](./image/del-one-sekvenssikaavio.png)
+[!DelOne](https://github.com/ranven/contactbook/blob/main/dokumentaatio/image/del-one-sekvenssikaavio.png)
 
 X-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan kontakteja hallinnoivan **ContactServicen** metodia `delete_one_contact` parametreilla käyttäjän ID ja poistettavan kontaktin ID. Sovelluslogiikka tarkistaa käyttäjän IDn olemassaolon ja ilmoittaa virheestä mikäli tätä ei ole.
 
@@ -115,7 +115,7 @@ Tämän jälkeen sovelluslogiikka poistaa kontaktin kutsumalla **ContactReposito
 
 Kontaktien listausnäkymässä käyttäjän painettua _Delete all_-painiketta, toimii sovellus seuraavanlaisesti:
 
-[!DelAll](./image/del-all-sekvenssikaavio.png)
+[!DelAll](https://github.com/ranven/contactbook/blob/main/dokumentaatio/image/del-all-sekvenssikaavio.png)
 
 Delete all-painikkeen tapahtumankäsittelijä kutsuu sovelluslogiikan kontakteja hallinnoivan **ContactServicen** metodia `delete_all_contacts` parametrilla käyttäjän ID. Sovelluslogiikka tarkistaa käyttäjän IDn olemassaolon ja ilmoittaa virheestä mikäli tätä ei ole.
 

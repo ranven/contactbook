@@ -39,6 +39,7 @@
 
 - Paranneltu virheilmoituksia käyttäjän rekisteröityessä epäkelvoilla tunnuksilla
 - Käyttäjä näkee virheilmoituksen mikäli kontaktia luodessa annettu puhelinnumero ei ole numeroarvo
+- Käyttäjä näkee virheilmoituksen mikäli kontaktia luodessa jokin kenttien syötteistä on yli 100 merkkiä pitkä
 - Paranneltu koodin ja dokumentaation laatua
 - Paranneltu testejä ja lisätty eristetty tietokanta testeille
 - Lisätty testausdokumentti ja loput sekvenssikaaviot sovelluksen päätoiminnallisuuksista
