@@ -1,7 +1,6 @@
 import unittest
 from repositories.user_repository import user_repository
 from services.user_service import UserService, InvalidCredentialsError, UsernameTakenError
-from entities.user import User
 
 
 class FakeUserRepository:

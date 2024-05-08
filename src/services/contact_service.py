@@ -37,7 +37,7 @@ class ContactService:
         """Tarkistaa käyttäjän id'n ja kutsuu contact_repositoryn find_all-metodia hakeakseen 
         käyttäjän kontaktit. 
 
-        Nostaa virheilmoituksen mikäli käyttäjän id'tä ei ole.
+        Nostaa virheilmoituksen mikäli käyttäjän ID'tä ei ole.
 
         Args:
             user_id käyttäjän id
@@ -53,11 +53,13 @@ class ContactService:
         return self._contact_repository.find_all(user_id)
 
     def create_contact(self, first_name, last_name, email, phone, role, user_id):
-        """Tarkistaa käyttäjän id'n sekä puhelinnumeron oikeellisen formaatin ja
-        luo argumenttien kentistä Contact-olion sekä id'n kontaktille. 
+        """Tarkistaa käyttäjän id'n, puhelinnumeron formaatin sekä 
+        syötteiden pituuksien olevan alle 100 merkkiä. 
+        Nostaa virheilmoituksen mikäli jokin tarkistuksista ei mene läpi.
 
-        Kutsuu contact_repositoryn create-metodia luodakseen kontaktin. 
-        Nostaa virheilmoituksen mikäli käyttäjän id'tä ei ole.
+        Luo argumenttien kentistä Contact-olion sekä id'n kontaktille. 
+
+        Kutsuu contact_repositoryn create-metodia luodakseen uuden kontaktin. 
 
         Args:
             first_name: kontaktin etunimi
@@ -96,9 +98,9 @@ class ContactService:
 
     def delete_all_contacts(self, user_id):
         """Tarkistaa käyttäjän id'n ja kutsuu contact_repositoryn delete_all-metodia 
-        poistaakseen käyttäjän kontaktit. 
+        poistaakseen kaikki käyttäjän kontaktit. 
 
-        Nostaa virheilmoituksen mikäli käyttäjän id'tä ei ole.
+        Nostaa virheilmoituksen mikäli käyttäjän ID'tä ei ole.
 
         Args:
             user_id käyttäjän id
@@ -112,6 +114,8 @@ class ContactService:
     def delete_one_contact(self, user_id, contact_id):
         """Tarkistaa käyttäjän id'n ja kutsuu contact_repositoryn delete_one-metodia 
         poistaakseen yhden kontaktin annetun id'n perusteella.
+
+        Nostaa virheilmoituksen mikäli käyttäjän ID'tä ei ole.
 
         Args: 
             user_id käyttäjän id

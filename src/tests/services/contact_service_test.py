@@ -2,8 +2,6 @@ import unittest
 import uuid
 from entities.user import User
 from services.contact_service import ContactService, NoUserError, PhoneNumberError, ContactCreationError
-from entities.contact import Contact
-from services.user_service import UserService
 
 
 class FakeUser:

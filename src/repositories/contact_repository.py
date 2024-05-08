@@ -41,7 +41,7 @@ class ContactRepository:
                         row["user"]) for row in rows]
 
     def find_one(self, contact_id):
-        """Palauttaa kontaktin annetun id'n perusteella.
+        """Palauttaa kontaktin annetun kontakti-id'n perusteella.
 
         Args:
             contact_id: haettavan kontaktin id
@@ -77,10 +77,10 @@ class ContactRepository:
         self._connection.commit()
 
     def delete_one(self, user_id, contact_id):
-        """Poistaa yhden kontaktin annetun id'n perusteella.
+        """Poistaa yhden kontaktin annetun kontakti-id'n perusteella.
 
         Args:
-            user_id: käyttäjän id, jonka luoma kontakti poistetaan
+            user_id: käyttäjän id jonka luoma kontakti poistetaan
             contact_id: poistettavan kontaktin id 
         """
 

@@ -1,4 +1,3 @@
-
 from tkinter import ttk, constants, StringVar
 from services.contact_service import contact_service, ContactCreationError, PhoneNumberError
 from services.user_service import user_service
